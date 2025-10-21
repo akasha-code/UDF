@@ -1,10 +1,12 @@
 # GitHub Wiki Guide for UDF
 
-This guide explains how to use the GitHub Wiki functionality for extended UDF documentation.
+This guide explains how to use the GitHub Wiki functionality for the complete UDF documentation.
+
+> **⚠️ Important:** The UDF documentation has been migrated to the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki). The `/wiki/` directory in this repository contains source content that should be published to the GitHub Wiki. The main repository focuses on examples and framework structure.
 
 ## Overview
 
-The UDF GitHub Wiki serves as an extended documentation platform for:
+The UDF GitHub Wiki serves as the comprehensive documentation platform for:
 - Community-contributed content
 - Detailed tutorials and guides
 - Use case documentation
