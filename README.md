@@ -2,29 +2,33 @@
 
 Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las mejores prácticas de gobierno, calidad y entrega. Compatible con PMBOK, PRINCE2 y SAFe, integra métricas técnicas, artefactos YAML, control de calidad automatizado, gobernanza y aprendizaje continuo.
 
+> **📖 Documentación Completa:** Toda la documentación y el manual completo están disponibles en la [GitHub Wiki](https://github.com/akasha-code/UDF/wiki)
+>
+> **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
+
 ## 📚 Documentación
 
-La documentación completa del UDF está disponible en el directorio [wiki/](wiki/):
+La documentación completa del UDF está disponible en la [GitHub Wiki](https://github.com/akasha-code/UDF/wiki):
 
 ### Contenido Principal
 
-0. **[Overview](wiki/00-overview.md)** - Resumen ejecutivo y navegación
-1. **[Fases del ciclo de vida](wiki/01-lifecycle-phases.md)** - Initiation, Planning, Build, Validation, Operation, Closure
-2. **[Artefactos principales](wiki/02-artifacts.md)** - Plantillas y documentos estándar
-3. **[Gestión técnica y CI/CD](wiki/03-technical-management.md)** - Technical Health Index, automation
-4. **[Gobierno y Project Management](wiki/04-governance.md)** - Stage Reviews, control de cambios
-5. **[Roles, Interacciones y Responsabilidades](wiki/05-roles-interactions.md)** - RACI, topologías de equipo
-6. **[Calidad y pruebas](wiki/06-quality-testing.md)** - QEI, Quality Charter, testing
-7. **[Arquitectura y observabilidad](wiki/07-architecture.md)** - ADRs, SLOs, monitoring
-8. **[Producto y valor](wiki/08-product-value.md)** - User stories, outcome metrics
-9. **[Portfolio y planificación](wiki/09-portfolio.md)** - OKRs, roadmaps, multi-proyecto
-10. **[Learning Loop activo](wiki/10-learning-loop.md)** - Captura de aprendizajes
-11. **[Delivery Cube (PDI–DSI–QEI–TTI)](wiki/11-delivery-cube.md)** - Configuración del framework
-12. **[Gobierno y aprendizaje](wiki/12-governance-learning.md)** - Stage Reviews detallados
-13. **[Testing, riesgo y madurez](wiki/13-testing-risk-maturity.md)** - Gestión proporcional
-14. **[Plan de adopción](wiki/14-adoption-plan.md)** - Roadmap de implementación
-15. **[Síntesis](wiki/15-synthesis.md)** - Resumen integral del UDF
-16. **[Unified Test Strategy (UTS)](wiki/16-unified-test-strategy.md)** - Estrategia completa de testing
+0. **[Overview](https://github.com/akasha-code/UDF/wiki/00-overview)** - Resumen ejecutivo y navegación
+1. **[Fases del ciclo de vida](https://github.com/akasha-code/UDF/wiki/01-lifecycle-phases)** - Initiation, Planning, Build, Validation, Operation, Closure
+2. **[Artefactos principales](https://github.com/akasha-code/UDF/wiki/02-artifacts)** - Plantillas y documentos estándar
+3. **[Gestión técnica y CI/CD](https://github.com/akasha-code/UDF/wiki/03-technical-management)** - Technical Health Index, automation
+4. **[Gobierno y Project Management](https://github.com/akasha-code/UDF/wiki/04-governance)** - Stage Reviews, control de cambios
+5. **[Roles, Interacciones y Responsabilidades](https://github.com/akasha-code/UDF/wiki/05-roles-interactions)** - RACI, topologías de equipo
+6. **[Calidad y pruebas](https://github.com/akasha-code/UDF/wiki/06-quality-testing)** - QEI, Quality Charter, testing
+7. **[Arquitectura y observabilidad](https://github.com/akasha-code/UDF/wiki/07-architecture)** - ADRs, SLOs, monitoring
+8. **[Producto y valor](https://github.com/akasha-code/UDF/wiki/08-product-value)** - User stories, outcome metrics
+9. **[Portfolio y planificación](https://github.com/akasha-code/UDF/wiki/09-portfolio)** - OKRs, roadmaps, multi-proyecto
+10. **[Learning Loop activo](https://github.com/akasha-code/UDF/wiki/10-learning-loop)** - Captura de aprendizajes
+11. **[Delivery Cube (PDI–DSI–QEI–TTI)](https://github.com/akasha-code/UDF/wiki/11-delivery-cube)** - Configuración del framework
+12. **[Gobierno y aprendizaje](https://github.com/akasha-code/UDF/wiki/12-governance-learning)** - Stage Reviews detallados
+13. **[Testing, riesgo y madurez](https://github.com/akasha-code/UDF/wiki/13-testing-risk-maturity)** - Gestión proporcional
+14. **[Plan de adopción](https://github.com/akasha-code/UDF/wiki/14-adoption-plan)** - Roadmap de implementación
+15. **[Síntesis](https://github.com/akasha-code/UDF/wiki/15-synthesis)** - Resumen integral del UDF
+16. **[Unified Test Strategy (UTS)](https://github.com/akasha-code/UDF/wiki/16-unified-test-strategy)** - Estrategia completa de testing
 
 ## 🚀 Quick Start
 
@@ -50,7 +54,7 @@ project/
 
 ### 3. Ejecuta tu primer Stage Review
 
-- Usa las plantillas en `wiki/04-governance.md`
+- Usa las plantillas en la [Wiki de Governance](https://github.com/akasha-code/UDF/wiki/04-governance)
 - Revisa objetivos, entregables y criterios Go/No-Go
 - Documenta decisiones
 
@@ -109,10 +113,10 @@ tti: external
 
 ## 📖 Recursos adicionales
 
-- [Plan de adopción paso a paso](wiki/14-adoption-plan.md)
-- [Unified Test Strategy completa](wiki/16-unified-test-strategy.md)
-- [Ejemplos de V-Model en contextos regulados](wiki/05-roles-interactions.md#55-ejemplo-operativo-de-v-model-dentro-del-udf)
-- [Calculadora de madurez organizacional](wiki/13-testing-risk-maturity.md#madurez-organizacional)
+- [Plan de adopción paso a paso](https://github.com/akasha-code/UDF/wiki/14-adoption-plan)
+- [Unified Test Strategy completa](https://github.com/akasha-code/UDF/wiki/16-unified-test-strategy)
+- [Ejemplos de V-Model en contextos regulados](https://github.com/akasha-code/UDF/wiki/05-roles-interactions#55-ejemplo-operativo-de-v-model-dentro-del-udf)
+- [Calculadora de madurez organizacional](https://github.com/akasha-code/UDF/wiki/13-testing-risk-maturity#madurez-organizacional)
 
 ## 🤝 Contribución
 
