@@ -29,6 +29,7 @@ The documentation follows a logical progression:
 14. **14-adoption-plan.md** - Plan de adopción
 15. **15-synthesis.md** - Síntesis
 16. **16-unified-test-strategy.md** - Unified Test Strategy (UTS)
+17. **17-interoperabilidad-y-automatizacion.md** - Núcleo vs extensiones; perfil agent-ready (handoff, estados, capacidades, gates)
 
 ## Publishing to GitHub Wiki
 

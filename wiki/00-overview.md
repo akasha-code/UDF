@@ -9,6 +9,7 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 * **Propósito:** ejecutar proyectos de IT, producto o transformación digital con evidencia mínima suficiente y trazabilidad completa.
 * **Principio central:** cada fase produce artefactos verificables; se avanza tras la revisión de fase (Stage Review).
 * **Aplicabilidad:** software, integraciones, data, automatización, IA, proyectos regulados o de producto.
+* **Adopción modular:** el UDF se usa como **catálogo** de prácticas y artefactos ajustados con el [Delivery Cube](11-delivery-cube.md); el núcleo mínimo y las extensiones tipo PMO/portfolio, así como el perfil **interoperabilidad con automatización** (handoffs, estados de artefacto, gates verificables), están descritos en [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md).
 
 ---
 
@@ -32,3 +33,4 @@ Este documento es la entrada principal al UDF. A continuación, encontrarás los
 14. [Plan de adopción](14-adoption-plan.md)
 15. [Síntesis](15-synthesis.md)
 16. [Unified Test Strategy (UTS)](16-unified-test-strategy.md)
+17. [Núcleo, extensiones e interoperabilidad con automatización](17-interoperabilidad-y-automatizacion.md)

@@ -108,6 +108,7 @@ cp templates/cicd/.github/workflows/*.yml .github/workflows/
 
 ## Next Steps
 
+- **Automation / agent interoperability**: See [UDF wiki §17 — Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion) and [`templates/automation/`](../../templates/automation/).
 - **Learn More**: Read the [Core Concepts](../architecture/core-concepts.md)
 - **Deep Dive**: Explore the [Architecture](../architecture/overview.md)
 - **Get Help**: Visit the [Wiki](../../../wiki) or [Discussions](../../../discussions)

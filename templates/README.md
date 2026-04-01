@@ -11,6 +11,14 @@ Templates provide pre-configured starting points that include:
 - Best practices
 - Documentation
 
+## Automation / interoperability (`automation/`)
+
+Machine-readable handoffs, artifact package manifests, and gate check lists aligned with [UDF wiki §17 — Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion):
+
+- **[templates/automation/](automation/)** — `handoff.schema.json`, `artifact-manifest.example.yaml`, `gate-checks.example.yaml`, and README.
+
+Use these when integrating CI, orchestrators, or agents with UDF Stage Reviews and evidence.
+
 ## Available Templates
 
 Templates will be added to this directory as they are developed. Each template includes:

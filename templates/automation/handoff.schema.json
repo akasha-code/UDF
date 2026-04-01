@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/akasha-code/UDF/schemas/handoff.schema.json",
+  "title": "UDF Handoff",
+  "description": "Minimum contract for handoffs between humans, services, or orchestrated agents in a UDF-aligned project.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "correlation_id",
+    "from",
+    "to"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Semantic version of this handoff document shape (e.g. 1.0.0).",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "examples": ["1.0.0"]
+    },
+    "correlation_id": {
+      "type": "string",
+      "description": "Unique id for this handoff attempt; used for tracing and idempotent processing.",
+      "minLength": 1
+    },
+    "from": { "$ref": "#/$defs/actorRef" },
+    "to": { "$ref": "#/$defs/actorRef" },
+    "artifact_refs": {
+      "type": "array",
+      "description": "Paths, commit SHAs, or URIs to artifacts included in this handoff.",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "evidence_refs": {
+      "type": "array",
+      "description": "Links to tests, metrics, CI runs, or other verification evidence.",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "open_risks": {
+      "type": "array",
+      "description": "Risks or open questions for the receiver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "summary": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          }
+        },
+        "additionalProperties": true
+      },
+      "default": []
+    },
+    "requested_decision": {
+      "type": "string",
+      "description": "Explicit decision requested from the receiver or gate (e.g. Go/No-Go, scope choice)."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional envelope: timestamps, pipeline run id, etc.",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "actorRef": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "human | agent | service | role",
+          "examples": ["human", "agent", "service", "role"]
+        },
+        "id": {
+          "type": "string",
+          "description": "Stable identifier (login, agent name, service name, role id)."
+        },
+        "display_name": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Example: UDF-aligned artifact package manifest (YAML).
+# Copy and adapt per project. States: draft | under_review | accepted
+# See wiki: https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion
+
+schema_version: "1.0.0"
+package_id: "feat-auth-2026-04"
+title: "Authentication hardening milestone"
+
+state: draft
+# state: under_review
+# state: accepted
+
+artifact_refs:
+  - path: docs/adr/0007-auth-hardening.md
+  - path: src/auth/
+  - path: validation_manifest.yaml
+
+evidence_refs:
+  - path: qa_evidence/auth-suite-20260401.log
+  - uri: https://ci.example.org/runs/abc123
+
+provenance:
+  run_id: "orchestrator-run-7f3a"
+  actor_id: "agent-build"
+  commit_ref: "a1b2c3d4e5f6"
+
+gates:
+  required_for_accepted:
+    - id: unit_tests_green
+    - id: security_scan_pass
+    - id: architecture_review
+
+notes: "Promote to under_review when PR opens; to accepted after SR-E Go."

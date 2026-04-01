@@ -14,6 +14,14 @@ El UDF se adopta de forma progresiva, permitiendo a las organizaciones comenzar 
 
 ---
 
+## ¿Necesitás orquestación, agentes o handoffs machine-readable?
+
+- [ ] Revisá [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md) para el perfil **agent-ready**: contratos de handoff, matriz de capacidades, gates como lista de checks y provenance.
+- [ ] Copiá o adaptá las plantillas del repo: [`templates/automation/`](https://github.com/akasha-code/UDF/tree/main/templates/automation).
+- [ ] Mantené alineados los Stage Reviews humanos con las transiciones de estado que definas en automatización.
+
+---
+
 ## Fases de adopción
 
 ### Fase 0: Assessment (Semana 1-2)

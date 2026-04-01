@@ -46,7 +46,8 @@ Examples should be placed in the `/examples` directory and include:
 ### Wiki Content
 
 For extended documentation, tutorials, or community-contributed content:
-- Use the [GitHub Wiki](../../wiki)
+- Edit Markdown under [`wiki/`](wiki/) in this repository (source of truth for numbered wiki pages).
+- After merge, **maintainers** publish updates to the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki) by copying files to the `UDF.wiki` git repo; see [WIKI_GUIDE.md](../WIKI_GUIDE.md) (section *Syncing wiki/ to the GitHub Wiki*).
 - Follow the wiki's structure and guidelines
 - Cross-reference with repository documentation where appropriate
 

@@ -1,0 +1,41 @@
+# Example: verifiable gate checks for a Stage Review (UDF).
+# Mix automated checks (CI/tooling) and manual sign-offs.
+# See wiki: https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion
+
+schema_version: "1.0.0"
+gate_id: "SR-E-build"
+stage_review: "SR-E"
+project: "example-service"
+
+checks:
+  - id: unit_tests_green
+    type: automated
+    description: "All unit tests pass in CI"
+    criterion: "CI job test:status == success"
+    evidence_ref: "${CI_RUN_URL}"
+
+  - id: lint_clean
+    type: automated
+    description: "Linter exits zero"
+    criterion: "eslint --max-warnings 0"
+
+  - id: coverage_threshold
+    type: automated
+    description: "Line coverage >= configured minimum"
+    criterion: "coverage.lines.pct >= 80"
+
+  - id: threat_model_updated
+    type: manual
+    description: "Security / architecture reviewed for auth changes"
+    criterion: "Tech Lead sign-off in PR or SR board"
+    owner_role: "Tech Lead / Architect"
+
+  - id: no_open_critical_risks
+    type: manual
+    description: "Risk register has no untreated critical items for this release"
+    criterion: "Recorded in stage_review_board.md"
+    owner_role: "PM / Delivery Lead"
+
+decision:
+  type: GoNoGo
+  recorded_in: "stage_review_board.md"

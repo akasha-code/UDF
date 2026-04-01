@@ -4,11 +4,17 @@ Common terms and definitions used throughout the Unified Delivery Framework.
 
 ## A
 
+### Agent capability matrix (UDF)
+Optional complement to RACI when using automation or multiple specialists: per-actor flags such as `can_write`, `can_approve`, `can_request_review`, and explicit deny rules (`must_not_touch`). See [UDF wiki §17 — Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
+
 ### API (Application Programming Interface)
 A set of rules and protocols for building and interacting with software applications. In UDF, APIs define how components communicate.
 
 ### Artifact
 A file produced by the build process, such as compiled code, container images, or deployment packages.
+
+### Artifact lifecycle state (UDF)
+In the UDF automation profile, a documented state for an artifact or work package, typically `draft`, `under_review`, or `accepted`, with explicit rules for promotion and Stage Review alignment. See [UDF wiki §17](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
 
 ### Authentication
 The process of verifying the identity of a user or system.
@@ -108,6 +114,9 @@ A documentation system integrated with GitHub repositories.
 ### Health Check
 An endpoint or mechanism to verify service availability and readiness.
 
+### Handoff (UDF)
+A structured message transferring work between actors (human, agent, or service) with fields such as `schema_version`, `correlation_id`, artifact and evidence references, open risks, and requested decisions. Validated by [`templates/automation/handoff.schema.json`](https://github.com/akasha-code/UDF/blob/main/templates/automation/handoff.schema.json). See [UDF wiki §17](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
+
 ### Helm
 A package manager for Kubernetes applications.
 
@@ -150,6 +159,9 @@ A system that distributes network traffic across multiple servers.
 Recording events and messages from an application for debugging and monitoring.
 
 ## M
+
+### must_not_touch (UDF)
+An explicit deny list of paths, environments, or resource types an actor must not modify (and optionally must not read), even if broader technical access exists. Used to enforce separation of duties in automation. See [UDF wiki §17](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
 
 ### Microservices
 An architectural style where applications are composed of small, independent services.

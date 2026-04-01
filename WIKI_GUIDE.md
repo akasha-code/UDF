@@ -4,6 +4,12 @@ This guide explains how to use the GitHub Wiki functionality for the complete UD
 
 > **⚠️ Important:** The UDF documentation has been migrated to the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki). The `/wiki/` directory in this repository contains source content that should be published to the GitHub Wiki. The main repository focuses on examples and framework structure.
 
+## Syncing `wiki/` to the GitHub Wiki
+
+Changes merged in the **main repository** under [`wiki/`](wiki/) (including new pages such as `17-interoperabilidad-y-automatizacion.md`) are **not** deployed automatically to the GitHub Wiki.
+
+**Maintainers** should periodically copy updated or new `.md` files from the main repo’s `wiki/` directory into the [wiki git repository](https://github.com/akasha-code/UDF.wiki.git) (clone with `git clone https://github.com/akasha-code/UDF.wiki.git`), commit, and push so the public wiki matches the source of truth. See also [wiki/README.md](wiki/README.md) (Publishing to GitHub Wiki).
+
 ## Overview
 
 The UDF GitHub Wiki serves as the comprehensive documentation platform for:

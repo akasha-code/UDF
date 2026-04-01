@@ -2,6 +2,8 @@
 
 El UDF define un conjunto de artefactos estándar que garantizan la trazabilidad, calidad y gobernanza del proyecto. Estos artefactos están disponibles como plantillas en formato Markdown, CSV o YAML para facilitar su adopción y versionado.
 
+Los **manifiestos** de paquete de trabajo y los **handoffs** entre actores pueden incluir **estado** del entregable (`draft`, `under_review`, `accepted`), **`schema_version`** del formato y referencias de evidencia; las plantillas de ejemplo viven en el repositorio en [`templates/automation/`](https://github.com/akasha-code/UDF/tree/main/templates/automation). Detalle conceptual en [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md).
+
 ---
 
 ## Artefactos por fase

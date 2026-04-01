@@ -26,6 +26,12 @@ Cada rol tiene un área de responsabilidad definida y una relación clara de aut
 * **La comunicación asincrónica** (repos, foros, SR logs) asegura continuidad.
 * **La accountability es individual**, la responsabilidad puede ser compartida.
 
+### Opción: matriz de capacidades (automatización)
+
+Cuando intervienen **orquestadores, pipelines o agentes** además de roles humanos, el RACI puede complementarse con una **matriz de capacidades** por actor: qué puede escribir o aprobar (`can_write`, `can_approve`, `can_request_review`) y **prohibiciones explícitas** (`must_not_touch` sobre rutas o secretos). Así se evita ambigüedad frente a permisos técnicos amplios.
+
+La definición operativa y los estados de artefacto (`draft`, `under_review`, `accepted`) están en [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md).
+
 ---
 
 ## 5.3 Interacciones según topología de equipo (TTI)
