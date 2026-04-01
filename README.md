@@ -10,44 +10,77 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 >
 > **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
 
-## Vista panorámica: artefactos por fase
+## Mapa UDF: entregas, roles y gobierno
 
-Cada fase del ciclo de vida produce **entregables documentados**; el conjunto exacto depende del **PDI** (profundidad) y del contexto. Lo siguiente es el **mapa estándar** del framework. Detalle y plantillas en [Artefactos principales (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts).
+El marco se entiende por **qué se entrega**, **quién lo impulsa** y **cómo se gobierna** el avance; los nombres de archivo y plantillas concretas están en [Artefactos principales (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts). La profundidad depende del **PDI** y del contexto.
 
-### Flujo del ciclo de vida y entregables por Stage Review
+### 1) Entregas por fase — el qué
 
 ```mermaid
 flowchart TB
-  subgraph phaseInit [SR-I Initiation]
-    a1["charter.md<br/>user-stories/ · domain-model<br/>use-cases/ · prototype/"]
+  subgraph phaseInit [SR-I Iniciación]
+    out1["Visión y alcance acordados<br/>Requisitos priorizados<br/>Comprensión del dominio<br/>Exploración de experiencia"]
   end
-  subgraph phasePlan [SR-C Concept y Planning]
-    a2["project_plan.md · traceability_matrix.csv<br/>robustness · class-diagram<br/>story-maps.md"]
+  subgraph phasePlan [SR-C Concepto y planificación]
+    out2["Diseño de solución y robustez<br/>Plan y dependencias<br/>Trazabilidad requisitos–diseño"]
   end
-  subgraph phaseBuild [SR-E Build]
-    a3["tests.csv · adr_*.md<br/>technical_health_report.md<br/>sequence.puml · validation_manifest.yaml"]
+  subgraph phaseBuild [SR-E Construcción]
+    out3["Producto incrementado<br/>Decisiones de arquitectura<br/>Salud técnica y señales de calidad<br/>Validaciones automatizadas"]
   end
-  subgraph phaseVal [SR-B Business Validation]
-    a4["business_validation_report.md<br/>qa_evidence/ · cutover_plan.md<br/>UAT sign-off"]
+  subgraph phaseVal [SR-B Validación de negocio]
+    out4["Evidencia de pruebas<br/>Aceptación y valor verificado<br/>Plan de transición"]
   end
-  subgraph phaseOps [SR-O Operation]
-    a5["runbook.md · deployment_log.md<br/>monitoring_dashboard.yaml<br/>ownership_transfer.md"]
+  subgraph phaseOps [SR-O Operación]
+    out5["Despliegue y registro operativo<br/>Manual y observabilidad<br/>Transferencia de responsabilidad"]
   end
-  subgraph phaseClose [SR-X Closure]
-    a6["lessons_learned.md<br/>project_closure_report.md<br/>benefit_realization_plan.md"]
+  subgraph phaseClose [SR-X Cierre]
+    out6["Lecciones aprendidas<br/>Beneficios y cierre formal"]
   end
   phaseInit --> phasePlan --> phaseBuild --> phaseVal --> phaseOps --> phaseClose
 ```
 
-### Artefactos transversales (todo el ciclo)
+### 2) Autoría — quién impulsa cada tipo de entrega
 
-Gobernanza, calidad y riesgo acompañan las fases anteriores; no pertenecen a una sola etapa.
+No es exclusivo (varios roles colaboran); indica **foco de responsabilidad** según el UDF. Detalle en [Roles (wiki)](https://github.com/akasha-code/UDF/wiki/05-roles-interactions).
 
 ```mermaid
 flowchart TB
-  subgraph crossLayer [Gobierno_calidad_y_aprendizaje]
-    cx["stage_review_board.md · risk_register.csv · quality_charter.md<br/>architecture_governance_matrix · stakeholder_register · status_report<br/>test_strategy / test_matrix · learning loop · qa_gate_policy"]
+  subgraph authRoles [Foco por rol]
+    n1["PM / Delivery — coordinación general, Stage Reviews, riesgos y alcance"]
+    n2["Producto / UX — historias, prioridad, valor y validación funcional"]
+    n3["Arquitectura — diseño, decisiones estructurales, estándares"]
+    n4["Desarrollo — implementación, pruebas de desarrollo, revisión"]
+    n5["QA / Compliance — estrategia de pruebas, evidencia, gates"]
+    n6["DevOps / Plataforma — integración, despliegue, observabilidad"]
+    n7["Cliente / Stakeholder — UAT, feedback, validación de valor"]
   end
+```
+
+### 3) Gobierno transversal — sobre todo el ciclo
+
+Actas, riesgos, calidad y aprendizaje **no** pertenecen a una sola fase: atraviesan el trabajo y se actualizan en cada Stage Review.
+
+```mermaid
+flowchart TB
+  subgraph tgov [Capas que cruzan todas las fases]
+    g1[Actas y decisiones Go/No-Go]
+    g2[Riesgos, stakeholders y visibilidad]
+    g3[Carta de calidad y políticas de prueba]
+    g4[Aprendizaje y mejora continua]
+  end
+```
+
+### 4) Ciclo de decisión en cada gate
+
+```mermaid
+flowchart LR
+  trabajo[Trabajo y entregables en curso] --> revision[Revisión de fase]
+  revision --> decision{Go o No-Go}
+  decision -->|Go| siguiente[Siguiente fase o release]
+  decision -->|No-Go| ajuste[Ajustes acordados]
+  ajuste --> trabajo
+  siguiente --> lecciones[Retroalimentación al aprendizaje]
+  lecciones -.-> trabajo
 ```
 
 ## 📚 Documentación
