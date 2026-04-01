@@ -10,78 +10,37 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 >
 > **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
 
-## Mapa UDF: entregas, roles y gobierno
+## Mapa UDF (vista BPMN: swimlanes × fases)
 
-El marco se entiende por **qué se entrega**, **quién lo impulsa** y **cómo se gobierna** el avance; los nombres de archivo y plantillas concretas están en [Artefactos principales (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts). La profundidad depende del **PDI** y del contexto.
+Cada **carril** es un área (Business · Development · Infrastructure). Cada **columna** es una fase del ciclo de vida UDF (Stage Review). Las celdas describen **entregables** en lenguaje de lector; el detalle de plantillas y archivos está en [Artefactos (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts). La profundidad real depende del **PDI**.
 
-### 1) Entregas por fase — el qué
+**Lectura:** el flujo principal avanza **de izquierda a derecha** por fase. Dentro de cada fase, los tres carriles se alimentan en paralelo; el **gobierno** (actas SR, riesgos, calidad, aprendizaje) atraviesa todas las columnas. En cada transición de columna aplica un **gate** Go/No-Go.
 
-```mermaid
-flowchart TB
-  subgraph phaseInit [SR-I Iniciación]
-    out1["Visión y alcance acordados<br/>Requisitos priorizados<br/>Comprensión del dominio<br/>Exploración de experiencia"]
-  end
-  subgraph phasePlan [SR-C Concepto y planificación]
-    out2["Diseño de solución y robustez<br/>Plan y dependencias<br/>Trazabilidad requisitos–diseño"]
-  end
-  subgraph phaseBuild [SR-E Construcción]
-    out3["Producto incrementado<br/>Decisiones de arquitectura<br/>Salud técnica y señales de calidad<br/>Validaciones automatizadas"]
-  end
-  subgraph phaseVal [SR-B Validación de negocio]
-    out4["Evidencia de pruebas<br/>Aceptación y valor verificado<br/>Plan de transición"]
-  end
-  subgraph phaseOps [SR-O Operación]
-    out5["Despliegue y registro operativo<br/>Manual y observabilidad<br/>Transferencia de responsabilidad"]
-  end
-  subgraph phaseClose [SR-X Cierre]
-    out6["Lecciones aprendidas<br/>Beneficios y cierre formal"]
-  end
-  phaseInit --> phasePlan --> phaseBuild --> phaseVal --> phaseOps --> phaseClose
+```
+┌─ Pool: entrega con trazabilidad UDF ─────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Gobierno transversal (todas las fases): Stage Reviews · registro de riesgos · carta de calidad · aprendizaje · decisión Go/No-Go │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  Swimlane / fase →   │  SR-I        │  SR-C           │  SR-E           │  SR-B            │  SR-O              │  SR-X           │
+│                       │  Iniciación  │  Planificación  │  Construcción   │  Validación      │  Operación         │  Cierre         │
+├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
+│  Business             │ Visión y     │ Historias y     │ Demos de valor  │ UAT y aceptación │ Valor en           │ Beneficios y    │
+│  (negocio / producto) │ alcance      │ priorización    │ incremental     │ negocio          │ producción         │ cierre formal   │
+│                       │ Stakeholders │ mapa / roadmap  │ validación UX   │ plan de corte    │ feedback clientes  │ retrospectiva   │
+├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
+│  Development          │ Comprensión  │ Diseño de       │ Producto        │ Evidencia de     │ Cambios y          │ Lecciones       │
+│  (ingeniería / QA)    │ del dominio  │ solución · ADRs │ implementado ·  │ pruebas · informe│ salud técnica      │ aprendidas      │
+│                       │ casos de uso │ trazabilidad    │ pruebas · THI   │ validación       │ soporte evolutivo  │ ADR finales     │
+├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
+│  Infrastructure       │ Base mínima  │ Entornos y      │ CI/CD y         │ Gates de         │ Despliegue         │ Runbook y       │
+│  (plataforma / ops)   │ de entorno   │ pipeline        │ builds          │ release          │ registro operativo │ transferencia   │
+│                       │              │                 │ reproducibles   │ automatizados    │ observabilidad     │ cierre ops      │
+├───────────────────────┴──────────────┴─────────────────┴─────────────────┴──────────────────┴────────────────────┴─────────────────┤
+│  Flujo de fase  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────►   │
+│  Por columna: revisión SR → evidencia mínima → decisión Go/No-Go → siguiente columna · Si No-Go: ajustes en el mismo carril/fase   │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 2) Autoría — quién impulsa cada tipo de entrega
-
-No es exclusivo (varios roles colaboran); indica **foco de responsabilidad** según el UDF. Detalle en [Roles (wiki)](https://github.com/akasha-code/UDF/wiki/05-roles-interactions).
-
-```mermaid
-flowchart TB
-  subgraph authRoles [Foco por rol]
-    n1["PM / Delivery — coordinación general, Stage Reviews, riesgos y alcance"]
-    n2["Producto / UX — historias, prioridad, valor y validación funcional"]
-    n3["Arquitectura — diseño, decisiones estructurales, estándares"]
-    n4["Desarrollo — implementación, pruebas de desarrollo, revisión"]
-    n5["QA / Compliance — estrategia de pruebas, evidencia, gates"]
-    n6["DevOps / Plataforma — integración, despliegue, observabilidad"]
-    n7["Cliente / Stakeholder — UAT, feedback, validación de valor"]
-  end
-```
-
-### 3) Gobierno transversal — sobre todo el ciclo
-
-Actas, riesgos, calidad y aprendizaje **no** pertenecen a una sola fase: atraviesan el trabajo y se actualizan en cada Stage Review.
-
-```mermaid
-flowchart TB
-  subgraph tgov [Capas que cruzan todas las fases]
-    g1[Actas y decisiones Go/No-Go]
-    g2[Riesgos, stakeholders y visibilidad]
-    g3[Carta de calidad y políticas de prueba]
-    g4[Aprendizaje y mejora continua]
-  end
-```
-
-### 4) Ciclo de decisión en cada gate
-
-```mermaid
-flowchart LR
-  trabajo[Trabajo y entregables en curso] --> revision[Revisión de fase]
-  revision --> decision{Go o No-Go}
-  decision -->|Go| siguiente[Siguiente fase o release]
-  decision -->|No-Go| ajuste[Ajustes acordados]
-  ajuste --> trabajo
-  siguiente --> lecciones[Retroalimentación al aprendizaje]
-  lecciones -.-> trabajo
-```
+**Roles (referencia):** Business se alinea con PM, Product Owner y stakeholders; Development con arquitectura, desarrollo y QA; Infrastructure con DevOps/plataforma y operación. Matriz RACI en [Roles (wiki)](https://github.com/akasha-code/UDF/wiki/05-roles-interactions).
 
 ## 📚 Documentación
 
