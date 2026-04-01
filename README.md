@@ -10,6 +10,46 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 >
 > **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
 
+## Vista panorámica: artefactos por fase
+
+Cada fase del ciclo de vida produce **entregables documentados**; el conjunto exacto depende del **PDI** (profundidad) y del contexto. Lo siguiente es el **mapa estándar** del framework. Detalle y plantillas en [Artefactos principales (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts).
+
+### Flujo del ciclo de vida y entregables por Stage Review
+
+```mermaid
+flowchart TB
+  subgraph phaseInit [SR-I Initiation]
+    a1["charter.md<br/>user-stories/ · domain-model<br/>use-cases/ · prototype/"]
+  end
+  subgraph phasePlan [SR-C Concept y Planning]
+    a2["project_plan.md · traceability_matrix.csv<br/>robustness · class-diagram<br/>story-maps.md"]
+  end
+  subgraph phaseBuild [SR-E Build]
+    a3["tests.csv · adr_*.md<br/>technical_health_report.md<br/>sequence.puml · validation_manifest.yaml"]
+  end
+  subgraph phaseVal [SR-B Business Validation]
+    a4["business_validation_report.md<br/>qa_evidence/ · cutover_plan.md<br/>UAT sign-off"]
+  end
+  subgraph phaseOps [SR-O Operation]
+    a5["runbook.md · deployment_log.md<br/>monitoring_dashboard.yaml<br/>ownership_transfer.md"]
+  end
+  subgraph phaseClose [SR-X Closure]
+    a6["lessons_learned.md<br/>project_closure_report.md<br/>benefit_realization_plan.md"]
+  end
+  phaseInit --> phasePlan --> phaseBuild --> phaseVal --> phaseOps --> phaseClose
+```
+
+### Artefactos transversales (todo el ciclo)
+
+Gobernanza, calidad y riesgo acompañan las fases anteriores; no pertenecen a una sola etapa.
+
+```mermaid
+flowchart TB
+  subgraph crossLayer [Gobierno_calidad_y_aprendizaje]
+    cx["stage_review_board.md · risk_register.csv · quality_charter.md<br/>architecture_governance_matrix · stakeholder_register · status_report<br/>test_strategy / test_matrix · learning loop · qa_gate_policy"]
+  end
+```
+
 ## 📚 Documentación
 
 La documentación completa del UDF está disponible en la [GitHub Wiki](https://github.com/akasha-code/UDF/wiki):
