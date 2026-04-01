@@ -10,37 +10,53 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 >
 > **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
 
-## Mapa UDF (vista BPMN: swimlanes × fases)
+## Mapa UDF (flujo tipo BPMN: carriles y secuencia)
 
-Cada **carril** es un área (Business · Development · Infrastructure). Cada **columna** es una fase del ciclo de vida UDF (Stage Review). Las celdas describen **entregables** en lenguaje de lector; el detalle de plantillas y archivos está en [Artefactos (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts). La profundidad real depende del **PDI**.
+Tres **carril** (Business → Development → Infrastructure) modelan el **orden típico** de handoff dentro de cada fase: primero intención y valor de negocio, luego diseño e implementación, después plataforma y operación habilitada. **Entre fases** hay un **Stage Review** (gateway Go/No-Go) antes de abrir la siguiente fase. En la práctica puede haber trabajo en paralelo; este diagrama es la **línea base** para leer dependencias.
 
-**Lectura:** el flujo principal avanza **de izquierda a derecha** por fase. Dentro de cada fase, los tres carriles se alimentan en paralelo; el **gobierno** (actas SR, riesgos, calidad, aprendizaje) atraviesa todas las columnas. En cada transición de columna aplica un **gate** Go/No-Go.
+**Gobierno transversal** (actas, riesgos, carta de calidad, aprendizaje) se aplica en cada gateway, no como caja más para no saturar el gráfico. Detalle de plantillas en [Artefactos (wiki)](https://github.com/akasha-code/UDF/wiki/02-artifacts).
 
+**Lectura:** dentro de cada subproceso (SR-I … SR-X), el flujo va **de arriba abajo** en el carril (Business → Development → Infrastructure). Entre fases, las flechas pasan por el **gateway** (rombo Go/No-Go) y reabren la fase siguiente por **Business**.
+
+```mermaid
+flowchart LR
+  subgraph SR_I["SR-I · Iniciación"]
+    direction TB
+    s1b[Business: visión y alcance] --> s1d[Development: dominio y casos] --> s1i[Infrastructure: base mínima entorno]
+  end
+  g1{"Gateway SR-I"}
+  subgraph SR_C["SR-C · Planificación"]
+    direction TB
+    s2b[Business: historias y prioridad] --> s2d[Development: diseño y trazabilidad] --> s2i[Infrastructure: pipeline y entornos]
+  end
+  g2{"Gateway SR-C"}
+  subgraph SR_E["SR-E · Construcción"]
+    direction TB
+    s3b[Business: validación de valor en iteración] --> s3d[Development: producto, pruebas, salud técnica] --> s3i[Infrastructure: CI/CD y artefactos]
+  end
+  g3{"Gateway SR-E"}
+  subgraph SR_B["SR-B · Validación negocio"]
+    direction TB
+    s4b[Business: UAT y aceptación] --> s4d[Development: evidencia QA e informes] --> s4i[Infrastructure: gates de release]
+  end
+  g4{"Gateway SR-B"}
+  subgraph SR_O["SR-O · Operación"]
+    direction TB
+    s5b[Business: valor y feedback en producción] --> s5d[Development: mejoras y soporte] --> s5i[Infrastructure: despliegue y observabilidad]
+  end
+  g5{"Gateway SR-O"}
+  subgraph SR_X["SR-X · Cierre"]
+    direction TB
+    s6b[Business: beneficios y cierre] --> s6d[Development: lecciones aprendidas] --> s6i[Infrastructure: transferencia y runbook final]
+  end
+  s1i --> g1 --> s2b
+  s2i --> g2 --> s3b
+  s3i --> g3 --> s4b
+  s4i --> g4 --> s5b
+  s5i --> g5 --> s6b
 ```
-┌─ Pool: entrega con trazabilidad UDF ─────────────────────────────────────────────────────────────────────────────────────────────┐
-│ Gobierno transversal (todas las fases): Stage Reviews · registro de riesgos · carta de calidad · aprendizaje · decisión Go/No-Go │
-├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  Swimlane / fase →   │  SR-I        │  SR-C           │  SR-E           │  SR-B            │  SR-O              │  SR-X           │
-│                       │  Iniciación  │  Planificación  │  Construcción   │  Validación      │  Operación         │  Cierre         │
-├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
-│  Business             │ Visión y     │ Historias y     │ Demos de valor  │ UAT y aceptación │ Valor en           │ Beneficios y    │
-│  (negocio / producto) │ alcance      │ priorización    │ incremental     │ negocio          │ producción         │ cierre formal   │
-│                       │ Stakeholders │ mapa / roadmap  │ validación UX   │ plan de corte    │ feedback clientes  │ retrospectiva   │
-├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
-│  Development          │ Comprensión  │ Diseño de       │ Producto        │ Evidencia de     │ Cambios y          │ Lecciones       │
-│  (ingeniería / QA)    │ del dominio  │ solución · ADRs │ implementado ·  │ pruebas · informe│ salud técnica      │ aprendidas      │
-│                       │ casos de uso │ trazabilidad    │ pruebas · THI   │ validación       │ soporte evolutivo  │ ADR finales     │
-├───────────────────────┼──────────────┼─────────────────┼─────────────────┼──────────────────┼────────────────────┼─────────────────┤
-│  Infrastructure       │ Base mínima  │ Entornos y      │ CI/CD y         │ Gates de         │ Despliegue         │ Runbook y       │
-│  (plataforma / ops)   │ de entorno   │ pipeline        │ builds          │ release          │ registro operativo │ transferencia   │
-│                       │              │                 │ reproducibles   │ automatizados    │ observabilidad     │ cierre ops      │
-├───────────────────────┴──────────────┴─────────────────┴─────────────────┴──────────────────┴────────────────────┴─────────────────┤
-│  Flujo de fase  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────►   │
-│  Por columna: revisión SR → evidencia mínima → decisión Go/No-Go → siguiente columna · Si No-Go: ajustes en el mismo carril/fase   │
-└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
 
-**Roles (referencia):** Business se alinea con PM, Product Owner y stakeholders; Development con arquitectura, desarrollo y QA; Infrastructure con DevOps/plataforma y operación. Matriz RACI en [Roles (wiki)](https://github.com/akasha-code/UDF/wiki/05-roles-interactions).
+**Roles (referencia):** Business ≈ PM, Product Owner, stakeholders; Development ≈ arquitectura, desarrollo, QA; Infrastructure ≈ DevOps/plataforma. [Roles (wiki)](https://github.com/akasha-code/UDF/wiki/05-roles-interactions).
 
 ## 📚 Documentación
 
