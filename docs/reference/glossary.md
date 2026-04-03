@@ -16,9 +16,6 @@ A file produced by the build process, such as compiled code, container images, o
 ### Artifact lifecycle state (UDF)
 In the UDF automation profile, a documented state for an artifact or work package, typically `draft`, `under_review`, or `accepted`, with explicit rules for promotion and Stage Review alignment. See [UDF wiki §17](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
 
-### UDF artifact map (file names and dependencies)
-Presentation names (English and Spanish) for each conventional file, plus a Mermaid diagram of dependencies between artifacts by phase: [UDF wiki §18](https://github.com/akasha-code/UDF/wiki/18-artifact-map-and-dependencies), or in-repo [artifact-map.md](artifact-map.md).
-
 ### Authentication
 The process of verifying the identity of a user or system.
 

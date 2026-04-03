@@ -34,4 +34,3 @@ Este documento es la entrada principal al UDF. A continuación, encontrarás los
 15. [Síntesis](15-synthesis.md)
 16. [Unified Test Strategy (UTS)](16-unified-test-strategy.md)
 17. [Núcleo, extensiones e interoperabilidad con automatización](17-interoperabilidad-y-automatizacion.md)
-18. [Mapeo de artefactos y dependencias (diagrama)](18-artifact-map-and-dependencies.md)
