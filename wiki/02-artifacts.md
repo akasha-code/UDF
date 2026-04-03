@@ -4,6 +4,8 @@ El UDF define un conjunto de artefactos estándar que garantizan la trazabilidad
 
 Los **manifiestos** de paquete de trabajo y los **handoffs** entre actores pueden incluir **estado** del entregable (`draft`, `under_review`, `accepted`), **`schema_version`** del formato y referencias de evidencia; las plantillas de ejemplo viven en el repositorio en [`templates/automation/`](https://github.com/akasha-code/UDF/tree/main/templates/automation). Detalle conceptual en [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md).
 
+**Mapeo y dependencias:** nombres para presentación (EN/ES) de cada archivo convención y diagrama Mermaid de dependencias entre artefactos por fase en [18-artifact-map-and-dependencies.md](18-artifact-map-and-dependencies.md).
+
 ---
 
 ## Artefactos por fase
@@ -139,4 +141,4 @@ auto_enable:
 
 ---
 
-[← Anterior: Lifecycle Phases](01-lifecycle-phases.md) | [Siguiente: Technical Management →](03-technical-management.md)
+[← Anterior: Lifecycle Phases](01-lifecycle-phases.md) | [Siguiente: Technical Management →](03-technical-management.md) · [Mapeo y diagrama de dependencias →](18-artifact-map-and-dependencies.md)

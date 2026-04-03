@@ -134,5 +134,6 @@ Esto refuerza trazabilidad hacia [ADRs](07-architecture.md) y el learning loop.
 
 - [Overview](00-overview.md)
 - [Artefactos principales](02-artifacts.md)
+- [Mapeo de artefactos y dependencias (diagrama)](18-artifact-map-and-dependencies.md)
 - [Roles e interacciones](05-roles-interactions.md)
 - [Plan de adopción](14-adoption-plan.md)

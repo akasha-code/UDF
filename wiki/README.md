@@ -30,6 +30,7 @@ The documentation follows a logical progression:
 15. **15-synthesis.md** - Síntesis
 16. **16-unified-test-strategy.md** - Unified Test Strategy (UTS)
 17. **17-interoperabilidad-y-automatizacion.md** - Núcleo vs extensiones; perfil agent-ready (handoff, estados, capacidades, gates)
+18. **18-artifact-map-and-dependencies.md** - Mapeo archivo → nombre para presentación (EN/ES) y diagrama de dependencias entre artefactos por fase
 
 ## Publishing to GitHub Wiki
 

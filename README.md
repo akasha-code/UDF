@@ -82,6 +82,7 @@ La documentación completa del UDF está disponible en la [GitHub Wiki](https://
 15. **[Síntesis](https://github.com/akasha-code/UDF/wiki/15-synthesis)** - Resumen integral del UDF
 16. **[Unified Test Strategy (UTS)](https://github.com/akasha-code/UDF/wiki/16-unified-test-strategy)** - Estrategia completa de testing
 17. **[Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion)** - Núcleo vs extensiones; perfil agent-ready (handoff, estados, capacidades, gates verificables)
+18. **[Mapeo de artefactos y dependencias](https://github.com/akasha-code/UDF/wiki/18-artifact-map-and-dependencies)** - Nombres para presentación (EN/ES) y diagrama Mermaid de dependencias por fase
 
 ## 🚀 Quick Start
 
@@ -166,6 +167,7 @@ tti: external
 
 ## 📖 Recursos adicionales
 
+- [Mapeo de artefactos y dependencias (wiki 18)](https://github.com/akasha-code/UDF/wiki/18-artifact-map-and-dependencies)
 - [Núcleo, extensiones e interoperabilidad (wiki 17)](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion)
 - [Plantillas automation (handoff, manifiestos, gates)](templates/automation/)
 - [Plan de adopción paso a paso](https://github.com/akasha-code/UDF/wiki/14-adoption-plan)
