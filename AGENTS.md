@@ -32,6 +32,11 @@ If the request does not authorize mutation, default to `analyze` or `assess`.
 ## Sources of truth
 
 - Start with `README.md` and `wiki/00-overview.md`.
+- Treat `wiki/` as the canonical framework reference.
+- Treat `docs/` as public guidance, `examples/` as technical examples, `templates/` as reusable starting points, and `skills/`, `schemas/`, and `scripts/` as the community automation layer.
+- Do not add commercial manuscripts, worked Fieldbook solutions, private product roadmaps, customer material, or proprietary implementations to this repository.
+- Preserve links to canonical sources when restating a material concept outside `wiki/`.
+- Do not promote an example or implementation behavior into a universal UDF rule without an explicit framework change.
 - Use `wiki/18-agencia-mandatos-intervenciones.md` for the actor and delegation model.
 - Use `wiki/19-contexto-assurance-capacidades.md` for assessment and delivery-profile derivation.
 - Use `wiki/20-arquitectura-agentic-e-integraciones.md` for LLM, agent, harness, RAG, staffing, MCP/API/CLI, local/cloud, and testing guidance.

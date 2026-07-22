@@ -17,6 +17,7 @@ We welcome contributions in various forms:
 2. **Templates** - Add new templates or improve existing ones
 3. **Examples** - Share real-world implementation examples
 4. **Best Practices** - Document lessons learned and recommended approaches
+5. **Community Automation** - Improve public validators, schemas, skills, or interfaces
 
 ## 📝 Types of Contributions
 
@@ -47,9 +48,15 @@ Examples should be placed in the `/examples` directory and include:
 
 For extended documentation, tutorials, or community-contributed content:
 - Edit Markdown under [`wiki/`](wiki/) in this repository (source of truth for numbered wiki pages).
-- After merge, **maintainers** publish updates to the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki) by copying files to the `UDF.wiki` git repo; see [WIKI_GUIDE.md](../WIKI_GUIDE.md) (section *Syncing wiki/ to the GitHub Wiki*).
+- After merge, **maintainers** publish updates to the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki) by copying files to the `UDF.wiki` git repo; see [WIKI_GUIDE.md](WIKI_GUIDE.md) (section *Syncing wiki/ to the GitHub Wiki*).
 - Follow the wiki's structure and guidelines
 - Cross-reference with repository documentation where appropriate
+
+### Repository Boundary
+
+This repository contains the public UDF framework and its community resources. Framework definitions belong in `wiki/`; public guidance belongs in `docs/`; executable community assistance belongs in `skills/`, `schemas/`, or `scripts/`.
+
+Commercial manuscripts, complete worked cases, private product roadmaps, customer material, and proprietary implementations are maintained separately and are not accepted through this repository. Do not submit content you do not intend to license under Apache License 2.0.
 
 ## 📐 Contribution Guidelines
 
@@ -58,6 +65,7 @@ For extended documentation, tutorials, or community-contributed content:
 - Place templates in `/templates` with descriptive subdirectories
 - Place examples in `/examples` organized by use case
 - Place documentation in `/docs` following the existing structure
+- Link material interpretations and examples back to their canonical `wiki/` sources
 - Use clear, descriptive filenames
 
 ### Markdown Style
@@ -104,9 +112,9 @@ All contributions will be reviewed by maintainers. We may:
 
 If you have questions:
 - Check the [documentation](./docs/)
-- Browse the [GitHub Wiki](../../wiki)
-- Open a [Discussion](../../discussions)
-- Ask in an [Issue](../../issues)
+- Browse the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki)
+- Open a [Discussion](https://github.com/akasha-code/UDF/discussions)
+- Ask in an [Issue](https://github.com/akasha-code/UDF/issues)
 
 ## 📄 License
 

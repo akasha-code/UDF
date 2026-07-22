@@ -1,5 +1,7 @@
 # 18) Agencia, mandatos e intervenciones
 
+> **Carácter editorial:** perspectiva opcional. Estas definiciones amplían UDF cuando intervienen actores con autonomía delegada; no reemplazan el modelo general de roles y equipos.
+
 El UDF amplía su unidad de análisis: no presupone que todo trabajo lo realiza una persona ni que toda automatización es un agente. Modela **quién o qué interviene**, bajo qué autoridad, con qué límites y qué evidencia deja.
 
 ## 18.1 Conceptos

@@ -5,6 +5,7 @@
 ## Start here
 
 - [Repository overview](README.md)
+- [Quick start](docs/getting-started/quick-start.md)
 - [Framework overview](wiki/00-overview.md)
 - [Lifecycle phases](wiki/01-lifecycle-phases.md)
 - [Artifacts and work products](wiki/02-artifacts.md)
@@ -24,6 +25,15 @@
 - [Automation templates](templates/automation/README.md)
 - [Portable UDF skill](skills/udf/SKILL.md)
 - [Repository instructions for agents](AGENTS.md)
+
+## Public UDF surfaces
+
+- [Canonical framework reference](wiki/README.md)
+- [Public documentation](docs/README.md)
+- [Templates](templates/README.md)
+- [Technical examples](examples/README.md)
+- [Machine-readable schemas](schemas/README.md)
+- [Portable UDF skill](skills/udf/SKILL.md)
 
 ## Quality and governance
 

@@ -1,5 +1,7 @@
 # 19) Contexto, assurance y capacidades
 
+> **Carácter editorial:** perspectiva orientativa. La formalización y derivación automática de perfiles es experimental y opcional; el Delivery Cube continúa siendo válido sin utilizarla.
+
 UDF no define una lista universal de tecnologías necesarias. Primero caracteriza el contexto y luego deriva un **perfil de entrega y assurance**: documentación, controles, evidencia y capacidades proporcionales al riesgo.
 
 ## 19.1 Del Delivery Cube al Context & Assurance Model
