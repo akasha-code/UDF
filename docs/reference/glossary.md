@@ -4,6 +4,15 @@ Common terms and definitions used throughout the Unified Delivery Framework.
 
 ## A
 
+### ACP
+Acrónimo usado por más de una especificación agentica, entre ellas protocolos cliente–agente y protocolos de comunicación entre agentes. UDF exige registrar el nombre completo, versión y propósito para evitar contratos ambiguos.
+
+### Actor (UDF)
+Entidad identificable que interviene en el delivery: persona, equipo, servicio, modelo o sistema. No todo actor tiene autonomía.
+
+### Agent (UDF)
+Actor con un objetivo delegado y margen para observar, decidir o actuar dentro de un mandato. Puede ser humano, técnico o híbrido. Una llamada directa a un LLM no constituye por sí sola un agente.
+
 ### Agent capability matrix (UDF)
 Optional complement to RACI when using automation or multiple specialists: per-actor flags such as `can_write`, `can_approve`, `can_request_review`, and explicit deny rules (`must_not_touch`). See [UDF wiki §17 — Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
 
@@ -97,6 +106,9 @@ A structured set of tools, guidelines, and best practices for software developme
 
 ## G
 
+### Guardrail (UDF)
+Control preventivo, detectivo o correctivo que limita o verifica intervenciones. Incluye permisos, sandbox, validaciones, aprobaciones, testing, monitoreo y rollback; no solo filtros de contenido.
+
 ### Git
 A distributed version control system for tracking changes in source code.
 
@@ -110,6 +122,9 @@ GitHub's CI/CD platform for automating workflows.
 A documentation system integrated with GitHub repositories.
 
 ## H
+
+### Harness agentico (UDF)
+Entorno que conecta objetivo, contexto, modelo, herramientas, memoria, políticas, evaluación y observabilidad para operar un agente.
 
 ### Health Check
 An endpoint or mechanism to verify service availability and readiness.
@@ -133,6 +148,9 @@ An operation that produces the same result regardless of how many times it's exe
 
 ### Integration
 The process of combining different systems or components to work together.
+
+### Intervention (UDF)
+Unidad auditable de actuación de un actor: análisis, propuesta, decisión, modificación, ejecución o comunicación, vinculada a un mandato y su evidencia.
 
 ## J
 
@@ -159,6 +177,12 @@ A system that distributes network traffic across multiple servers.
 Recording events and messages from an application for debugging and monitoring.
 
 ## M
+
+### Mandate (UDF)
+Delegación acotada que define objetivo, principal, actor, alcance, permisos, prohibiciones, tolerancias, aprobación, vigencia y condiciones de terminación.
+
+### MCP (Model Context Protocol)
+Protocolo para exponer herramientas, recursos y prompts a clientes compatibles. Puede operar localmente por `stdio`, en LAN o de forma remota; no implica internet ni cloud.
 
 ### must_not_touch (UDF)
 An explicit deny list of paths, environments, or resource types an actor must not modify (and optionally must not read), even if broader technical access exists. Used to enforce separation of duties in automation. See [UDF wiki §17](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion).
@@ -196,6 +220,9 @@ Automated configuration, coordination, and management of systems.
 
 ## P
 
+### Principal (UDF)
+Persona u organización que autoriza un mandato, conserva responsabilidad y acepta el riesgo residual.
+
 ### Pipeline
 A series of automated steps for building, testing, and deploying code.
 
@@ -214,6 +241,9 @@ A method of submitting changes to a codebase for review.
 A checkpoint in the delivery pipeline that ensures quality standards are met.
 
 ## R
+
+### RAG (Retrieval-Augmented Generation)
+Patrón opcional que recupera conocimiento externo para contextualizar una generación. Requiere fuentes autorizadas, procedencia, controles de acceso, actualización y evaluación.
 
 ### Rate Limiting
 Controlling the number of requests a user can make in a given time period.

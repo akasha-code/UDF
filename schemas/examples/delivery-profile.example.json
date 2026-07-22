@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "assessment_id": "payments-assistant-001",
+  "documentation_depth": "regulated",
+  "assurance_level": "high",
+  "human_oversight": "mandatory",
+  "capabilities": [
+    {"id": "audit_trail", "status": "required", "reason": "El sistema está regulado y procesa datos confidenciales."},
+    {"id": "execution_sandbox", "status": "recommended", "reason": "Reduce el alcance de efectos no previstos."},
+    {"id": "rag", "status": "recommended", "reason": "Fue solicitado para conocimiento distribuido; requiere procedencia y evaluación."},
+    {"id": "agent_staffing", "status": "not_applicable", "reason": "No se solicitó selección dinámica de actores."}
+  ],
+  "rationale": ["La regulación eleva documentación y trazabilidad.", "Los efectos requieren aprobación antes de ejecutarse."],
+  "unknowns": ["Política de retención final"],
+  "requires_human_confirmation": true
+}

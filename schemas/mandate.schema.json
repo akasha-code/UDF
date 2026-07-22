@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/akasha-code/UDF/schemas/mandate.schema.json",
+  "title": "UDF Mandate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "mandate_id", "objective", "principal", "actor", "scope", "tolerances", "approval", "stop_conditions", "status"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "mandate_id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "principal": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "actor_type": {"enum": ["human", "technical", "hybrid"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["can_read", "can_write", "must_not_touch"],
+      "properties": {
+        "can_read": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "can_write": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "must_not_touch": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "tolerances": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["risk"],
+      "properties": {
+        "cost": {"type": "string"},
+        "duration": {"type": "string"},
+        "risk": {"enum": ["low", "medium", "high", "critical"]},
+        "quality": {"type": "string"},
+        "scope": {"type": "string"}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_before"],
+      "properties": {
+        "required_before": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "approvers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "stop_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+    "valid_until": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["draft", "active", "suspended", "completed", "revoked"]}
+  }
+}

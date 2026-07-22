@@ -30,6 +30,11 @@ The documentation follows a logical progression:
 15. **15-synthesis.md** - Síntesis
 16. **16-unified-test-strategy.md** - Unified Test Strategy (UTS)
 17. **17-interoperabilidad-y-automatizacion.md** - Núcleo vs extensiones; perfil agent-ready (handoff, estados, capacidades, gates)
+18. **18-agencia-mandatos-intervenciones.md** - Actores, agentes, equipos, mandatos e intervenciones
+19. **19-contexto-assurance-capacidades.md** - Context & Assurance Model y capacidades proporcionales
+20. **20-arquitectura-agentic-e-integraciones.md** - Harnesses, guardrails, interfaces, RAG, staffing y testing
+21. **21-documentacion-agent-ready.md** - Documentación para personas y sistemas agenticos
+22. **22-alineacion-pmi-prince2-ia.md** - Alineación de gobierno y delivery con IA
 
 ## Publishing to GitHub Wiki
 

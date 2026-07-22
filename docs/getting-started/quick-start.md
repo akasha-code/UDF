@@ -2,6 +2,8 @@
 
 Get started with the Unified Delivery Framework in minutes.
 
+UDF es modular: empezá por entender el contexto y activá solo los artefactos, controles y capacidades que tengan una razón explícita.
+
 ## Prerequisites
 
 Before you begin, ensure you have:
@@ -35,6 +37,16 @@ UDF/
 ```
 
 ## Step 3: Choose Your Path
+
+Antes de elegir plantillas, registrá criticidad, reversibilidad, regulación, sensibilidad de datos, soberanía, autonomía, topología de ejecución, cadencia y madurez. Para un assessment estructurado:
+
+```bash
+cp schemas/examples/context-assessment.example.json context-assessment.json
+# Editá context-assessment.json con evidencia del proyecto.
+python skills/udf/scripts/derive_profile.py context-assessment.json
+```
+
+El perfil resultante requiere confirmación humana; no es una aprobación automática.
 
 ### For New Projects
 
@@ -109,6 +121,9 @@ cp templates/cicd/.github/workflows/*.yml .github/workflows/
 ## Next Steps
 
 - **Automation / agent interoperability**: See [UDF wiki §17 — Interoperabilidad y automatización](https://github.com/akasha-code/UDF/wiki/17-interoperabilidad-y-automatizacion) and [`templates/automation/`](../../templates/automation/).
+- **Human and technical agency**: Read [Agencia, mandatos e intervenciones](../../wiki/18-agencia-mandatos-intervenciones.md).
+- **Contextual configuration**: Read [Contexto, assurance y capacidades](../../wiki/19-contexto-assurance-capacidades.md).
+- **Agent usage**: Use the portable [`$udf` skill](../../skills/udf/SKILL.md) in `analyze`, `assess`, `plan`, `apply`, `validate`, `review-gate`, or `audit` mode.
 - **Learn More**: Read the [Core Concepts](../architecture/core-concepts.md)
 - **Deep Dive**: Explore the [Architecture](../architecture/overview.md)
 - **Get Help**: Visit the [Wiki](../../../wiki) or [Discussions](../../../discussions)

@@ -6,8 +6,8 @@ Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las me
 
 ## 0) Resumen ejecutivo
 
-* **Propósito:** ejecutar proyectos de IT, producto o transformación digital con evidencia mínima suficiente y trazabilidad completa.
-* **Principio central:** cada fase produce artefactos verificables; se avanza tras la revisión de fase (Stage Review).
+* **Propósito:** ejecutar proyectos de IT, producto o transformación digital con evidencia mínima suficiente y trazabilidad completa, incluyendo trabajo de personas y sistemas agenticos.
+* **Principio central:** actores humanos, técnicos o híbridos intervienen bajo mandatos acotados; cada fase produce resultados y evidencia verificables y se avanza tras la revisión de fase (Stage Review).
 * **Aplicabilidad:** software, integraciones, data, automatización, IA, proyectos regulados o de producto.
 * **Adopción modular:** el UDF se usa como **catálogo** de prácticas y artefactos ajustados con el [Delivery Cube](11-delivery-cube.md); el núcleo mínimo y las extensiones tipo PMO/portfolio, así como el perfil **interoperabilidad con automatización** (handoffs, estados de artefacto, gates verificables), están descritos en [17-interoperabilidad-y-automatizacion.md](17-interoperabilidad-y-automatizacion.md).
 
@@ -34,3 +34,8 @@ Este documento es la entrada principal al UDF. A continuación, encontrarás los
 15. [Síntesis](15-synthesis.md)
 16. [Unified Test Strategy (UTS)](16-unified-test-strategy.md)
 17. [Núcleo, extensiones e interoperabilidad con automatización](17-interoperabilidad-y-automatizacion.md)
+18. [Agencia, mandatos e intervenciones](18-agencia-mandatos-intervenciones.md)
+19. [Contexto, assurance y capacidades](19-contexto-assurance-capacidades.md)
+20. [Arquitectura agentica e integraciones](20-arquitectura-agentic-e-integraciones.md)
+21. [Documentación agent-ready](21-documentacion-agent-ready.md)
+22. [Alineación con PMI, PRINCE2 e IA](22-alineacion-pmi-prince2-ia.md)

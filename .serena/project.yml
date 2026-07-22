@@ -1,0 +1,17 @@
+# Serena: UDF documentation repo (markdown-centric)
+project_name: "UDF"
+
+languages:
+  - markdown
+
+ignore_all_files_in_gitignore: true
+
+ignored_paths: []
+
+read_only: false
+
+excluded_tools: []
+
+included_optional_tools: []
+
+encoding: utf-8

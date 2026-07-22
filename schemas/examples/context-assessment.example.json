@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "assessment_id": "payments-assistant-001",
+  "criticality": "high",
+  "reversibility": "partial",
+  "regulated": true,
+  "data_sensitivity": "confidential",
+  "sovereignty": "required",
+  "autonomy": "approval_required",
+  "execution_topology": "private_cloud",
+  "change_cadence": "iterative",
+  "organizational_maturity": "defined",
+  "knowledge_volume": "distributed",
+  "rag_requested": true,
+  "staffing_requested": false,
+  "assumptions": ["No se procesan credenciales de pago en el modelo"],
+  "unknowns": ["Política de retención final"],
+  "evidence_refs": ["docs/risk-assessment.md"]
+}

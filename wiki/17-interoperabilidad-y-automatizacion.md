@@ -1,6 +1,6 @@
 # 17) Núcleo, extensiones e interoperabilidad con automatización
 
-Este documento define **cómo adoptar el UDF sin cargar todo el marco**, qué tratar como **extensión opcional** (capa tipo PMO) y un **perfil agent-ready**: contratos, estados de artefacto, capacidades y gates verificables para integrar orquestadores, pipelines o agentes **sin sustituir** roles humanos ni Stage Reviews donde el contexto los exija.
+Este documento define **cómo adoptar el UDF sin cargar todo el marco**, qué tratar como **extensión opcional** (capa tipo PMO) y una base **agent-ready**: contratos, estados de artefacto, capacidades y gates verificables. La ontología ampliada de actores, mandatos e intervenciones está en [18-agencia-mandatos-intervenciones](18-agencia-mandatos-intervenciones.md), y su configuración contextual en [19-contexto-assurance-capacidades](19-contexto-assurance-capacidades.md).
 
 **Plantillas en el repositorio:** [templates/automation/](https://github.com/akasha-code/UDF/tree/main/templates/automation) (JSON Schema de handoff, ejemplos YAML de manifiesto y checks de gate).
 
@@ -48,7 +48,9 @@ Un proyecto o repositorio es **agent-ready** respecto del UDF cuando:
 4. Los **gates** pueden expresarse como **lista de checks** (automáticos y/o manuales).
 5. La **provenance** mínima permite auditar origen de cambios (útil para ADRs y [Learning Loop](10-learning-loop.md)).
 
-Esto **complementa** [Gobierno](04-governance.md) y [Roles](05-roles-interactions.md); no reemplaza la responsabilidad humana donde corresponda.
+Esto **complementa** [Gobierno](04-governance.md) y [Roles](05-roles-interactions.md). El agente puede ser humano, técnico o híbrido; un LLM invocado directamente puede ser solo una herramienta. La responsabilidad organizacional no se delega a un modelo.
+
+CLI, API, MCP, ACP, skill, GUI y TUI son interfaces independientes. MCP puede ejecutarse en el mismo host, una LAN o remotamente: el protocolo no determina despliegue ni límite de confianza. ACP debe identificarse con nombre y versión porque el acrónimo se utiliza para distintas formas de comunicación agentica. Ver [20-arquitectura-agentic-e-integraciones](20-arquitectura-agentic-e-integraciones.md).
 
 ### B.2 Ciclo de vida de artefacto (estados)
 
@@ -136,3 +138,5 @@ Esto refuerza trazabilidad hacia [ADRs](07-architecture.md) y el learning loop.
 - [Artefactos principales](02-artifacts.md)
 - [Roles e interacciones](05-roles-interactions.md)
 - [Plan de adopción](14-adoption-plan.md)
+- [Agencia, mandatos e intervenciones](18-agencia-mandatos-intervenciones.md)
+- [Contexto, assurance y capacidades](19-contexto-assurance-capacidades.md)

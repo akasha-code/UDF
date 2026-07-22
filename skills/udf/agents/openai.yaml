@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unified Delivery Framework"
+  short_description: "Evalúa y aplica UDF de forma contextual"
+  default_prompt: "Use $udf para analizar este proyecto y proponer un perfil UDF con justificación, sin modificar archivos salvo autorización explícita."

@@ -1,0 +1,42 @@
+# Unified Delivery Framework (UDF)
+
+> UDF is a modular, technology-agnostic framework for evidence-based delivery by human, technical, and hybrid actors. It covers governance, assurance, delegation, agentic systems, sovereignty, interoperability, and continuous learning.
+
+## Start here
+
+- [Repository overview](README.md)
+- [Framework overview](wiki/00-overview.md)
+- [Lifecycle phases](wiki/01-lifecycle-phases.md)
+- [Artifacts and work products](wiki/02-artifacts.md)
+- [Delivery context and assurance](wiki/19-contexto-assurance-capacidades.md)
+
+## Human and agentic delivery
+
+- [Agency, mandates, and interventions](wiki/18-agencia-mandatos-intervenciones.md)
+- [Agentic architecture and integrations](wiki/20-arquitectura-agentic-e-integraciones.md)
+- [Agent-ready documentation](wiki/21-documentacion-agent-ready.md)
+- [PMI and PRINCE2 alignment for AI-enabled delivery](wiki/22-alineacion-pmi-prince2-ia.md)
+- [Interoperability and automation](wiki/17-interoperabilidad-y-automatizacion.md)
+
+## Machine-readable resources
+
+- [JSON Schemas](schemas/README.md)
+- [Automation templates](templates/automation/README.md)
+- [Portable UDF skill](skills/udf/SKILL.md)
+- [Repository instructions for agents](AGENTS.md)
+
+## Quality and governance
+
+- [Governance](wiki/04-governance.md)
+- [Quality and testing](wiki/06-quality-testing.md)
+- [Architecture, security, and observability](wiki/07-architecture.md)
+- [Learning loop](wiki/10-learning-loop.md)
+- [Unified Test Strategy](wiki/16-unified-test-strategy.md)
+
+## Usage contract
+
+- Determine whether the request is analysis, assessment, planning, application, validation, gate review, or audit.
+- Do not modify a project when only analysis or assessment was requested.
+- Derive controls from context and evidence; do not make optional technologies mandatory.
+- Keep the accountable human or organization explicit when delegating to agents.
+- Cite the framework version and the specific source used for material recommendations.

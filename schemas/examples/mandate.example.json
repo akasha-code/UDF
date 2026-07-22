@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "mandate_id": "maintenance-2026-001",
+  "objective": "Corregir el defecto sin cambiar interfaces públicas",
+  "principal": "engineering-lead",
+  "actor": "maintenance-agent",
+  "actor_type": "technical",
+  "scope": {
+    "can_read": ["src/", "tests/"],
+    "can_write": ["src/", "tests/"],
+    "must_not_touch": ["production/", "secrets/"]
+  },
+  "tolerances": {"cost": "20 EUR", "duration": "2h", "risk": "low"},
+  "approval": {
+    "required_before": ["dependency-change", "deployment", "data-deletion"],
+    "approvers": ["engineering-lead"]
+  },
+  "stop_conditions": ["tests-regress", "scope-uncertain", "credential-required"],
+  "status": "active"
+}

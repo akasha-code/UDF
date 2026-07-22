@@ -1,14 +1,49 @@
 # Unified Delivery Framework (UDF)
 
-Diseño de un marco híbrido, pragmático y trazable que cruza ICONIX con las mejores prácticas de gobierno, calidad y entrega. Compatible con PMBOK, PRINCE2 y SAFe, integra métricas técnicas, artefactos YAML, control de calidad automatizado, gobernanza y aprendizaje continuo.
+Marco híbrido, pragmático y trazable para gobernar trabajo de personas, equipos, servicios y sistemas agenticos. UDF combina diseño, project management, calidad, operación y aprendizaje continuo; es compatible con prácticas de ICONIX, PMI/PMBOK, PRINCE2 y SAFe sin obligar a adoptar una metodología completa.
 
 **Adopción modular:** el UDF es un **catálogo** de fases, artefactos, evidencia y gobierno que activás según contexto ([Delivery Cube](https://github.com/akasha-code/UDF/blob/main/wiki/11-delivery-cube.md): PDI, DSI, QEI, TTI). No es obligatorio adoptar toda la profundidad documental ni la capa portfolio/financiera/comités formales: elegí el **núcleo** mínimo y sumá extensiones solo si el proyecto lo requiere. Detalle en [Núcleo, extensiones e interoperabilidad](https://github.com/akasha-code/UDF/blob/main/wiki/17-interoperabilidad-y-automatizacion.md).
 
-**Perfil automatización / orquestación:** contratos de handoff, estados de artefacto y matriz de capacidades para integrar herramientas o agentes con los mismos Stage Reviews y gates están descritos en esa misma wiki y en las plantillas [`templates/automation/`](templates/automation/).
+**Perfil humano y agentico:** UDF modela principales, actores, agentes, equipos, mandatos e intervenciones. La autonomía puede delegarse; la responsabilidad continúa en personas y organizaciones. Los contratos de handoff existentes se complementan con schemas de contexto, perfil, mandato e intervención.
 
 > **📖 Documentación:** El manual está en [`wiki/`](https://github.com/akasha-code/UDF/tree/main/wiki) en este repositorio (también publicable como [GitHub Wiki](https://github.com/akasha-code/UDF/wiki) si se sincroniza)
 >
 > **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
+
+## Modelo actual del framework
+
+UDF no parte de “personas versus IA”. Parte de actores que intervienen dentro de un sistema de responsabilidad:
+
+```mermaid
+flowchart LR
+  P["Principal humano u organizacional"] -->|"delega un mandato"| A["Actor / agente humano, técnico o híbrido"]
+  H["Harness: contexto, herramientas, memoria y políticas"] --> A
+  G["Guardrails y tolerancias"] --> A
+  A --> I["Intervención"]
+  I --> W["Work products"]
+  I --> S["Cambios de estado"]
+  I --> D["Decisiones"]
+  I --> E["Evidencia"]
+  W --> O["Outcomes"]
+  S --> O
+  E --> R["Stage Review / assurance"]
+  R --> P
+```
+
+- Un **actor** puede ser una persona, equipo, servicio, modelo o sistema.
+- Un **agente** es un actor con objetivo delegado y margen para observar, decidir o actuar; puede ser humano, técnico o híbrido.
+- Un **equipo** sigue siendo relevante como composición coordinada de actores.
+- Una llamada directa a un LLM es uso de una herramienta; no constituye por sí sola un agente.
+- Un **mandato** acota objetivo, permisos, prohibiciones, tolerancias, supervisión y condiciones de terminación.
+- Una **intervención** vincula al actor y su mandato con acciones, efectos, resultados y evidencia.
+
+La ontología completa está en [Agencia, mandatos e intervenciones](wiki/18-agencia-mandatos-intervenciones.md).
+
+## Configuración contextual, no requisitos universales
+
+UDF no declara tecnologías globalmente “necesarias”. Evalúa criticidad, reversibilidad, regulación, datos, soberanía, autonomía, topología, cadencia y madurez; después clasifica cada capacidad como `required`, `recommended`, `optional`, `not_applicable` o `discouraged`, con una razón verificable.
+
+El [Context & Assurance Model](wiki/19-contexto-assurance-capacidades.md) amplía el Delivery Cube sin invalidarlo. RAG, staffing, cloud, MCP, browser testing y documentación extensa son opciones contextuales, no condiciones de conformidad.
 
 ## Mapa de artefactos y dependencias por fase
 
@@ -218,6 +253,11 @@ La documentación principal vive en [`wiki/`](https://github.com/akasha-code/UDF
 15. **[Síntesis](https://github.com/akasha-code/UDF/blob/main/wiki/15-synthesis.md)** - Resumen integral del UDF
 16. **[Unified Test Strategy (UTS)](https://github.com/akasha-code/UDF/blob/main/wiki/16-unified-test-strategy.md)** - Estrategia completa de testing
 17. **[Interoperabilidad y automatización](https://github.com/akasha-code/UDF/blob/main/wiki/17-interoperabilidad-y-automatizacion.md)** - Núcleo vs extensiones; perfil agent-ready (handoff, estados, capacidades, gates verificables)
+18. **[Agencia, mandatos e intervenciones](https://github.com/akasha-code/UDF/blob/main/wiki/18-agencia-mandatos-intervenciones.md)** - Actores humanos, técnicos e híbridos; autoridad, responsabilidad y resultados
+19. **[Contexto, assurance y capacidades](https://github.com/akasha-code/UDF/blob/main/wiki/19-contexto-assurance-capacidades.md)** - Evolución del Delivery Cube y capacidades proporcionales
+20. **[Arquitectura agentica e integraciones](https://github.com/akasha-code/UDF/blob/main/wiki/20-arquitectura-agentic-e-integraciones.md)** - Harnesses, guardrails, MCP/API/CLI, RAG, staffing, testing y soberanía
+21. **[Documentación agent-ready](https://github.com/akasha-code/UDF/blob/main/wiki/21-documentacion-agent-ready.md)** - Documentación descubrible, recuperable, accionable y verificable
+22. **[Alineación con PMI, PRINCE2 e IA](https://github.com/akasha-code/UDF/blob/main/wiki/22-alineacion-pmi-prince2-ia.md)** - Valor, accountability, gestión por excepción y gates actualizados
 
 ## 🚀 Quick Start
 
@@ -228,6 +268,12 @@ Determina tu configuración inicial:
 - **DSI** (Structure): 1-5 - ¿Qué tan iterativo es tu proceso?
 - **QEI** (Quality): Low, Medium, High - ¿Cuánto énfasis en calidad?
 - **TTI** (Topology): Integrated, Dedicated, External - ¿Cómo se estructura tu equipo?
+
+Para trabajo agentico, agregá como mínimo: criticidad, reversibilidad, regulación, sensibilidad de datos, soberanía, autonomía, topología de ejecución y madurez. Podés partir de [`schemas/examples/context-assessment.example.json`](schemas/examples/context-assessment.example.json) y derivar un perfil reproducible:
+
+```bash
+python skills/udf/scripts/derive_profile.py schemas/examples/context-assessment.example.json
+```
 
 ### 2. Comienza con lo mínimo
 
@@ -293,16 +339,44 @@ tti: external
 
 ## 🔧 Herramientas recomendadas
 
-- **Documentación:** Markdown, PlantUML, YAML
-- **CI/CD:** GitHub Actions, GitLab CI, Jenkins
-- **Quality:** SonarQube, Snyk, ESLint
-- **Testing:** Jest, Playwright, k6, TestContainers
-- **Monitoring:** Prometheus, Grafana, ELK Stack
-- **Project Management:** JIRA, Linear, GitHub Projects
+Las marcas son ejemplos no normativos. Elegí por capacidad, límites de confianza, portabilidad, costo y ajuste al perfil:
+
+| Capacidad | Ejemplos |
+| --- | --- |
+| Clientes y harnesses agenticos | Codex, Claude Code, OpenCode, Gemini CLI |
+| Comprensión semántica de código | LSP, Serena |
+| Gestión de proyectos y trabajo | OpenProject, Taskwarrior, Kanban, Jira, Linear, GitHub Projects |
+| Testing | Frameworks del lenguaje, Playwright, navegadores headless, k6, Testcontainers |
+| Documentación y contratos | Markdown, Mermaid, PlantUML, OpenAPI, JSON Schema, Obsidian |
+| Revisión de planes | Plannotator y flujos equivalentes de anotación humana |
+| Calidad y seguridad | SonarQube, linters, scanners de dependencias y secretos |
+| Infraestructura y cloud | CLI/API de AWS, Azure o GCP, Kubernetes, OpenTofu/Terraform |
+| Observabilidad | OpenTelemetry, Prometheus, Grafana y stacks de logs |
+
+CLI, API, MCP, ACP, skill, GUI y TUI son **interfaces independientes**. MCP puede operar por `stdio` en el mismo host, como servicio local, en LAN o de forma remota; no implica internet ni cloud. `ACP` debe nombrarse con su especificación completa porque puede referirse a comunicación cliente–agente o agente–agente. Cuando corresponda, mantené la capacidad de dominio separada y exponela mediante uno o más adaptadores.
+
+## 🤖 Uso desde sistemas agenticos
+
+- [`AGENTS.md`](AGENTS.md) concentra reglas de aplicación dentro del repositorio.
+- [`llms.txt`](llms.txt) ofrece un índice breve y estable para descubrimiento.
+- [`skills/udf/`](skills/udf/) contiene un skill portable con modos `analyze`, `assess`, `plan`, `apply`, `validate`, `review-gate` y `audit`.
+- [`schemas/`](schemas/) contiene contratos versionados y ejemplos verificables.
+- [`scripts/validate_repository.py`](scripts/validate_repository.py) valida los contratos, índices y metadatos sin dependencias externas.
+
+Ejemplo de pedido seguro:
+
+```text
+Use $udf en modo assess para evaluar este proyecto. No modifiques archivos.
+Separá hechos, supuestos e incertidumbres y proponé capacidades con justificación.
+```
 
 ## 📖 Recursos adicionales
 
 - [Núcleo, extensiones e interoperabilidad (doc 17)](https://github.com/akasha-code/UDF/blob/main/wiki/17-interoperabilidad-y-automatizacion.md)
+- [Agencia, contexto y arquitectura agentica (docs 18–20)](https://github.com/akasha-code/UDF/blob/main/wiki/18-agencia-mandatos-intervenciones.md)
+- [Documentación agent-ready y alineación PMI/PRINCE2 (docs 21–22)](https://github.com/akasha-code/UDF/blob/main/wiki/21-documentacion-agent-ready.md)
+- [Contratos JSON Schema](schemas/README.md)
+- [Skill UDF](skills/udf/SKILL.md)
 - [Plantillas automation (handoff, manifiestos, gates)](https://github.com/akasha-code/UDF/tree/main/templates/automation)
 - [Plan de adopción paso a paso](https://github.com/akasha-code/UDF/blob/main/wiki/14-adoption-plan.md)
 - [Unified Test Strategy completa](https://github.com/akasha-code/UDF/blob/main/wiki/16-unified-test-strategy.md)

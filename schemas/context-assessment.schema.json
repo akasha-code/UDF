@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/akasha-code/UDF/schemas/context-assessment.schema.json",
+  "title": "UDF Context Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "assessment_id", "criticality", "reversibility", "regulated", "data_sensitivity", "sovereignty", "autonomy", "execution_topology", "change_cadence", "organizational_maturity"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "assessment_id": {"type": "string", "minLength": 1},
+    "criticality": {"enum": ["low", "medium", "high", "critical"]},
+    "reversibility": {"enum": ["easy", "partial", "difficult", "irreversible"]},
+    "regulated": {"type": "boolean"},
+    "data_sensitivity": {"enum": ["public", "internal", "confidential", "restricted"]},
+    "sovereignty": {"enum": ["none", "preferred", "required"]},
+    "autonomy": {"enum": ["none", "advisory", "approval_required", "bounded", "supervised", "high"]},
+    "execution_topology": {"enum": ["local", "lan", "private_cloud", "public_cloud", "hybrid", "edge"]},
+    "change_cadence": {"enum": ["low", "iterative", "continuous"]},
+    "organizational_maturity": {"enum": ["initial", "managed", "defined", "measured", "optimizing"]},
+    "knowledge_volume": {"enum": ["small", "medium", "large", "distributed"]},
+    "rag_requested": {"type": "boolean", "default": false},
+    "staffing_requested": {"type": "boolean", "default": false},
+    "assumptions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "unknowns": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

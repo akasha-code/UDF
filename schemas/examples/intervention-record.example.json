@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "intervention_id": "int-2026-001",
+  "mandate_id": "maintenance-2026-001",
+  "actor": "maintenance-agent",
+  "timestamp": "2026-07-22T10:00:00Z",
+  "kind": "modification",
+  "summary": "Corrige la validación y agrega una prueba de regresión",
+  "tools": ["git", "test-runner"],
+  "inputs": ["issue:123", "src/validator.py"],
+  "outputs": ["src/validator.py", "tests/test_validator.py"],
+  "effects": ["working-tree-modified"],
+  "evidence_refs": ["test://validator-regression/passed"],
+  "decision_refs": ["adr://validation-boundary"],
+  "rollback_ref": "git://revert/commit-sha",
+  "status": "verified"
+}

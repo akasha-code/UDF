@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/akasha-code/UDF/schemas/intervention-record.schema.json",
+  "title": "UDF Intervention Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "intervention_id", "mandate_id", "actor", "timestamp", "kind", "summary", "tools", "inputs", "outputs", "effects", "evidence_refs", "status"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "intervention_id": {"type": "string", "minLength": 1},
+    "mandate_id": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "kind": {"enum": ["analysis", "proposal", "decision", "modification", "execution", "communication"]},
+    "summary": {"type": "string", "minLength": 1},
+    "tools": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "inputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "outputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "effects": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "decision_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "rollback_ref": {"type": "string"},
+    "status": {"enum": ["proposed", "authorized", "executed", "verified", "failed", "rolled_back"]}
+  }
+}

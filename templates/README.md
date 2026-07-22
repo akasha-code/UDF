@@ -1,5 +1,7 @@
 # UDF Templates
 
+Para contratos agenticos versionados —assessment de contexto, perfil de entrega, mandato e intervención— usá [`../schemas/`](../schemas/). Las plantillas de `automation/` conservan el contrato de handoff v1 para compatibilidad.
+
 This directory contains reusable templates for various project types and scenarios within the Unified Delivery Framework.
 
 ## Overview
