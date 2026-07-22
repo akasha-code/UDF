@@ -4,3 +4,10 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 data/
+
+# Commercial UDF surfaces are maintained in private repositories.
+/book/
+/manual/
+/cases/
+/editorial/
+/toolkit/

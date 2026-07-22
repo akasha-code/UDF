@@ -19,7 +19,12 @@ EXAMPLES = {
 }
 LINK_SOURCES = [
     "README.md",
+    "CONTRIBUTING.md",
     "llms.txt",
+    "wiki/README.md",
+    "docs/README.md",
+    "docs/getting-started/quick-start.md",
+    "examples/README.md",
     "schemas/README.md",
     "skills/udf/SKILL.md",
     "wiki/18-agencia-mandatos-intervenciones.md",
@@ -106,9 +111,44 @@ def validate_navigation() -> list[str]:
         for label, content in (("README.md", readme), ("wiki/README.md", wiki_index)):
             if filename not in content:
                 errors.append(f"{label}: missing {filename}")
-    for required in ("README.md", "AGENTS.md", "skills/udf/SKILL.md", "schemas/README.md"):
+    for required in (
+        "README.md",
+        "AGENTS.md",
+        "docs/getting-started/quick-start.md",
+        "wiki/README.md",
+        "templates/README.md",
+        "examples/README.md",
+        "skills/udf/SKILL.md",
+        "schemas/README.md",
+    ):
         if required not in llms:
             errors.append(f"llms.txt: missing {required}")
+    return errors
+
+
+def validate_public_boundary() -> list[str]:
+    errors: list[str] = []
+    root_readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    surfaces = {
+        "framework": "wiki/README.md",
+        "documentation": "docs/README.md",
+        "templates": "templates/README.md",
+        "examples": "examples/README.md",
+        "schemas": "schemas/README.md",
+        "skill": "skills/udf/SKILL.md",
+    }
+    for name, entrypoint in surfaces.items():
+        if not (ROOT / entrypoint).is_file():
+            errors.append(f"public surface: missing {name} entrypoint {entrypoint}")
+        if entrypoint not in root_readme:
+            errors.append(f"README.md: missing {name} entrypoint {entrypoint}")
+    for private_directory in ("book", "manual", "cases", "editorial", "toolkit"):
+        if (ROOT / private_directory).exists():
+            errors.append(f"public boundary: private directory present: {private_directory}/")
+    for number in range(18, 23):
+        perspective = next((ROOT / "wiki").glob(f"{number:02d}-*.md"))
+        if "**Carácter editorial:**" not in perspective.read_text(encoding="utf-8"):
+            errors.append(f"{perspective.relative_to(ROOT)}: missing editorial character")
     return errors
 
 
@@ -149,12 +189,21 @@ def validate_local_links() -> list[str]:
 
 
 def main() -> int:
-    errors = validate_examples() + validate_navigation() + validate_skill() + validate_local_links()
+    errors = (
+        validate_examples()
+        + validate_navigation()
+        + validate_public_boundary()
+        + validate_skill()
+        + validate_local_links()
+    )
     if errors:
         for error in errors:
             print(f"ERROR {error}")
         return 1
-    print(f"Validated {len(EXAMPLES)} schema examples, 23 wiki entries, local links, and the UDF skill metadata.")
+    print(
+        f"Validated {len(EXAMPLES)} schema examples, 23 wiki entries, "
+        "public repository boundaries, local links, and the UDF skill metadata."
+    )
     return 0
 
 

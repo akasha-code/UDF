@@ -2,11 +2,9 @@
 
 This directory contains the source documentation files for the UDF framework.
 
-## ⚠️ Important Notice
+## Rol dentro de UDF
 
-**The official UDF documentation is published on the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki)**
-
-This directory serves as a source repository for the wiki content. The files here should be published to the GitHub Wiki to make them accessible to users.
+Esta carpeta conserva la referencia numerada y canónica del framework público. El contenido puede publicarse también en la [GitHub Wiki](https://github.com/akasha-code/UDF/wiki), pero el repositorio versionado es la fuente de verdad.
 
 ## Content Structure
 
@@ -36,7 +34,7 @@ The documentation follows a logical progression:
 21. **21-documentacion-agent-ready.md** - Documentación para personas y sistemas agenticos
 22. **22-alineacion-pmi-prince2-ia.md** - Alineación de gobierno y delivery con IA
 
-## Publishing to GitHub Wiki
+## Publicación opcional en GitHub Wiki
 
 To publish these files to the GitHub Wiki:
 
@@ -69,16 +67,13 @@ When updating documentation:
 
 1. Edit the files in this `wiki/` directory
 2. Commit changes to the main repository
-3. Publish updated content to the GitHub Wiki
-4. Ensure links in README.md point to the wiki
+3. Update public documentation, examples, schemas, or skills affected by a conceptual change
+4. Run `python scripts/validate_repository.py`
+5. Optionally publish updated content to the GitHub Wiki
 
-## Why Separate Repository and Wiki?
+## Repository and published wiki
 
-Following the issue guidance:
-- **Repository (https://github.com/akasha-code/UDF)**: Examples and framework structure
-- **Wiki (https://github.com/akasha-code/UDF/wiki)**: Complete manual and documentation
-
-This separation keeps the repository clean and focused on practical implementation while providing comprehensive documentation through the wiki.
+The repository preserves review history, validation, branches, and references across the public UDF framework. The GitHub Wiki is an optional publication channel for the numbered framework reference, not a separate source of truth.
 
 ## Contributing
 
@@ -86,6 +81,6 @@ To contribute to the documentation:
 
 1. Edit files in this directory
 2. Submit a pull request to the main repository
-3. Once merged, the maintainers will publish to the wiki
+3. Once merged, maintainers may publish the numbered reference to the GitHub Wiki
 
 For more details, see [CONTRIBUTING.md](../CONTRIBUTING.md) and [WIKI_GUIDE.md](../WIKI_GUIDE.md).

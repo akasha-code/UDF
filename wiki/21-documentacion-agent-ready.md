@@ -1,5 +1,7 @@
 # 21) Documentación agent-ready
 
+> **Carácter editorial:** perspectiva opcional. Complementa la documentación para personas; no obliga a mantener dos fuentes ni a adoptar protocolos agenticos.
+
 La documentación UDF debe servir a personas y a sistemas agenticos sin crear dos verdades paralelas. El objetivo no es escribir para una marca de IA, sino mejorar descubrimiento, comprensión, recuperación, acción, verificación y gobierno.
 
 ## 21.1 Seis propiedades

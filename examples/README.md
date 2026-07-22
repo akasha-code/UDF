@@ -2,6 +2,8 @@
 
 This directory contains real-world examples demonstrating how to use the Unified Delivery Framework in various scenarios.
 
+This directory remains focused on public technical implementations that can be run or adapted. Complete pedagogical cases and worked decisions may be distributed separately as professional UDF products.
+
 ## Overview
 
 Examples provide practical demonstrations of:
@@ -265,9 +267,9 @@ All examples must include:
 Need help with examples?
 
 - **Documentation**: Check [documentation](../docs/)
-- **Issues**: Search [GitHub Issues](../../issues)
-- **Discussions**: Ask in [Discussions](../../discussions)
-- **Wiki**: Visit the [GitHub Wiki](../../wiki)
+- **Issues**: Search [GitHub Issues](https://github.com/akasha-code/UDF/issues)
+- **Discussions**: Ask in [Discussions](https://github.com/akasha-code/UDF/discussions)
+- **Wiki**: Visit the [GitHub Wiki](https://github.com/akasha-code/UDF/wiki)
 
 ## Example Index
 
@@ -348,7 +350,7 @@ See [Troubleshooting Guide](../docs/guides/troubleshooting.md) for more help.
 - [Quick Start Guide](../docs/getting-started/quick-start.md)
 - [Templates](../templates/)
 - [Best Practices](../docs/guides/best-practices.md)
-- [GitHub Wiki](../../wiki)
+- [GitHub Wiki](https://github.com/akasha-code/UDF/wiki)
 
 ## License
 

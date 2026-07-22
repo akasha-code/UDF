@@ -1,5 +1,7 @@
 # 20) Arquitectura agentica e integraciones
 
+> **Carácter editorial:** perspectiva opcional y orientativa para iniciativas que incorporan IA, agentes o integraciones relacionadas.
+
 UDF recomienda arquitecturas por **capacidades e interfaces**, no una lista normativa de marcas. Las herramientas concretas son ejemplos reemplazables y deben evaluarse por contexto.
 
 ## 20.1 Capacidad, interfaz, transporte y despliegue

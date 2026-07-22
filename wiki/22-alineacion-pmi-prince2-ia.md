@@ -1,5 +1,7 @@
 # 22) Alineación con PMI, PRINCE2 e IA
 
+> **Carácter editorial:** mapeo orientativo. No implica certificación, equivalencia formal ni adopción obligatoria de esta perspectiva.
+
 UDF toma principios útiles de PMI y PRINCE2 sin intentar reemplazarlos ni declararse certificado por esas organizaciones. El mapeo permite que proyectos con IA usen vocabulario y controles reconocibles manteniendo el carácter modular del framework.
 
 ## 22.1 Aportes de PMI

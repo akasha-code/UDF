@@ -4,6 +4,8 @@ Get started with the Unified Delivery Framework in minutes.
 
 UDF es modular: empezá por entender el contexto y activá solo los artefactos, controles y capacidades que tengan una razón explícita.
 
+Si todavía no conocés el framework, comenzá por el [overview](../../wiki/00-overview.md). Esta guía se concentra en utilizar los recursos públicos del repositorio.
+
 ## Prerequisites
 
 Before you begin, ensure you have:
@@ -126,7 +128,7 @@ cp templates/cicd/.github/workflows/*.yml .github/workflows/
 - **Agent usage**: Use the portable [`$udf` skill](../../skills/udf/SKILL.md) in `analyze`, `assess`, `plan`, `apply`, `validate`, `review-gate`, or `audit` mode.
 - **Learn More**: Read the [Core Concepts](../architecture/core-concepts.md)
 - **Deep Dive**: Explore the [Architecture](../architecture/overview.md)
-- **Get Help**: Visit the [Wiki](../../../wiki) or [Discussions](../../../discussions)
+- **Get Help**: Visit the [Wiki](https://github.com/akasha-code/UDF/wiki) or [Discussions](https://github.com/akasha-code/UDF/discussions)
 - **Contribute**: See the [Contributing Guidelines](../../CONTRIBUTING.md)
 
 ## Quick Reference
@@ -140,9 +142,9 @@ cp templates/cicd/.github/workflows/*.yml .github/workflows/
 If you encounter issues, check:
 
 1. [Troubleshooting Guide](../guides/troubleshooting.md)
-2. [GitHub Issues](../../../issues)
-3. [Wiki Documentation](../../../wiki)
-4. [Community Discussions](../../../discussions)
+2. [GitHub Issues](https://github.com/akasha-code/UDF/issues)
+3. [Wiki Documentation](https://github.com/akasha-code/UDF/wiki)
+4. [Community Discussions](https://github.com/akasha-code/UDF/discussions)
 
 ## Additional Resources
 

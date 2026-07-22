@@ -1,16 +1,46 @@
 # Unified Delivery Framework (UDF)
 
-Marco híbrido, pragmático y trazable para gobernar trabajo de personas, equipos, servicios y sistemas agenticos. UDF combina diseño, project management, calidad, operación y aprendizaje continuo; es compatible con prácticas de ICONIX, PMI/PMBOK, PRINCE2 y SAFe sin obligar a adoptar una metodología completa.
+Framework modular, pragmático y trazable para diseñar sistemas de delivery proporcionales al contexto. UDF conecta ciclo de vida, artefactos, gobierno, calidad, arquitectura, producto, operación y aprendizaje sin obligar a adoptar una metodología completa.
 
 **Adopción modular:** el UDF es un **catálogo** de fases, artefactos, evidencia y gobierno que activás según contexto ([Delivery Cube](https://github.com/akasha-code/UDF/blob/main/wiki/11-delivery-cube.md): PDI, DSI, QEI, TTI). No es obligatorio adoptar toda la profundidad documental ni la capa portfolio/financiera/comités formales: elegí el **núcleo** mínimo y sumá extensiones solo si el proyecto lo requiere. Detalle en [Núcleo, extensiones e interoperabilidad](https://github.com/akasha-code/UDF/blob/main/wiki/17-interoperabilidad-y-automatizacion.md).
 
-**Perfil humano y agentico:** UDF modela principales, actores, agentes, equipos, mandatos e intervenciones. La autonomía puede delegarse; la responsabilidad continúa en personas y organizaciones. Los contratos de handoff existentes se complementan con schemas de contexto, perfil, mandato e intervención.
+**Perspectivas opcionales:** producto, portfolio, regulación, automatización, sistemas agenticos y soberanía amplían el núcleo cuando el contexto lo requiere. La perspectiva agentica modela principales, actores, agentes, equipos, mandatos e intervenciones sin redefinir todo UDF alrededor de la IA.
 
-> **📖 Documentación:** El manual está en [`wiki/`](https://github.com/akasha-code/UDF/tree/main/wiki) en este repositorio (también publicable como [GitHub Wiki](https://github.com/akasha-code/UDF/wiki) si se sincroniza)
+> **Primera vez:** comenzá por el [overview](wiki/00-overview.md) y continuá con el [Quick Start](docs/getting-started/quick-start.md).
 >
-> **💡 Este repositorio:** Contiene ejemplos prácticos, plantillas y la estructura del framework
+> **Referencia completa:** la fuente numerada del framework vive en [`wiki/`](wiki/README.md).
 
-## Modelo actual del framework
+## Este repositorio y la familia UDF
+
+Este repositorio contiene el **framework público UDF** y sus recursos comunitarios. Su licencia Apache 2.0 cubre la referencia canónica, documentación pública, schemas, templates, ejemplos y automatizaciones incluidas aquí.
+
+| Superficie | Para qué sirve | Entrada |
+| --- | --- | --- |
+| **Framework** | Definiciones, modelos, artefactos y perspectivas canónicas | [`wiki/`](wiki/README.md) |
+| **Documentación pública** | Introducción, arquitectura, guías y referencia | [`docs/`](docs/README.md) |
+| **Recursos comunitarios** | Templates, ejemplos, schemas y skill portable | [`templates/`](templates/README.md), [`examples/`](examples/README.md), [`schemas/`](schemas/README.md), [`skills/`](skills/udf/SKILL.md) |
+
+El libro, el manual profesional, el Fieldbook con casos resueltos y las implementaciones avanzadas del producto se desarrollan en repositorios privados con licencias propias. No forman parte de la distribución Apache de este repositorio. Esta frontera permite que el núcleo siga siendo abierto e interoperable sin publicar automáticamente todos los activos editoriales o comerciales de UDF.
+
+El núcleo histórico y su adaptación se desarrollan en `wiki/00`–`wiki/17`. Los documentos `wiki/18`–`wiki/22` agregan una perspectiva agentica y de IA opcional.
+
+## Núcleo del framework
+
+UDF organiza un ciclo de delivery en el que el trabajo produce resultados y evidencia suficientes para tomar decisiones, operar y aprender:
+
+```mermaid
+flowchart LR
+  C["Contexto y propósito"] --> W["Trabajo y artefactos"]
+  W --> Q["Calidad y evidencia"]
+  Q --> G["Stage Review / decisión"]
+  G --> O["Operación y outcomes"]
+  O --> L["Aprendizaje"]
+  L --> C
+```
+
+Las fases, artefactos y prácticas son un catálogo adaptable. Una configuración UDF puede ser pequeña: cada elemento adoptado debería contribuir a una decisión, reducir un riesgo, mejorar coordinación, producir evidencia necesaria o facilitar aprendizaje.
+
+## Perspectiva agentica — modelo de responsabilidad
 
 UDF no parte de “personas versus IA”. Parte de actores que intervienen dentro de un sistema de responsabilidad:
 
@@ -39,13 +69,15 @@ flowchart LR
 
 La ontología completa está en [Agencia, mandatos e intervenciones](wiki/18-agencia-mandatos-intervenciones.md).
 
-## Configuración contextual, no requisitos universales
+## Adaptación contextual, no requisitos universales
 
-UDF no declara tecnologías globalmente “necesarias”. Evalúa criticidad, reversibilidad, regulación, datos, soberanía, autonomía, topología, cadencia y madurez; después clasifica cada capacidad como `required`, `recommended`, `optional`, `not_applicable` o `discouraged`, con una razón verificable.
+UDF no declara tecnologías globalmente “necesarias”. Cuando una iniciativa necesita formalizar su selección, puede considerar criticidad, reversibilidad, regulación, datos, soberanía, autonomía, topología, cadencia y madurez, y clasificar capacidades como `required`, `recommended`, `optional`, `not_applicable` o `discouraged`, con una razón verificable.
 
 El [Context & Assurance Model](wiki/19-contexto-assurance-capacidades.md) amplía el Delivery Cube sin invalidarlo. RAG, staffing, cloud, MCP, browser testing y documentación extensa son opciones contextuales, no condiciones de conformidad.
 
 ## Mapa de artefactos y dependencias por fase
+
+> Esta sección es una referencia visual. Si recién estás conociendo UDF, podés omitirla y seguir el [Quick Start](docs/getting-started/quick-start.md).
 
 Este mapa muestra **dependencias entre artefactos** (no tareas): lectura **izquierda → derecha** por fase (SR-I … SR-X); dentro de cada columna el flujo típico es **de arriba abajo**. **Convención:** A → B indica que *B se apoya en, deriva de o debe ser coherente con* A. Las aristas **punteadas** cruzan el límite de la fase anterior. **Entre fases** el avance formal pasa por **Stage Reviews** (Go/No-Go); los ciclos de refinamiento entre artefactos no se dibujan para mantener el gráfico legible.
 
@@ -372,6 +404,10 @@ Separá hechos, supuestos e incertidumbres y proponé capacidades con justificac
 
 ## 📖 Recursos adicionales
 
+- [Quick Start](docs/getting-started/quick-start.md)
+- [Documentación](docs/README.md)
+- [Templates](templates/README.md)
+- [Ejemplos técnicos](examples/README.md)
 - [Núcleo, extensiones e interoperabilidad (doc 17)](https://github.com/akasha-code/UDF/blob/main/wiki/17-interoperabilidad-y-automatizacion.md)
 - [Agencia, contexto y arquitectura agentica (docs 18–20)](https://github.com/akasha-code/UDF/blob/main/wiki/18-agencia-mandatos-intervenciones.md)
 - [Documentación agent-ready y alineación PMI/PRINCE2 (docs 21–22)](https://github.com/akasha-code/UDF/blob/main/wiki/21-documentacion-agent-ready.md)
@@ -389,7 +425,7 @@ El UDF es un **living framework** que evoluciona con feedback de la comunidad. S
 
 ## 📄 Licencia
 
-Ver archivo [LICENSE](LICENSE) para detalles.
+El contenido de este repositorio se distribuye bajo [Apache License 2.0](LICENSE). Consultá también [NOTICE](NOTICE) y la [política de nombre y marcas](TRADEMARKS.md). Los productos UDF mantenidos fuera de este repositorio pueden utilizar licencias diferentes.
 
 ---
 
